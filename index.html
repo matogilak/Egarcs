@@ -1,1365 +1,1010 @@
 <!DOCTYPE html>
 <html lang="cs" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Čerpací stanice EGAR-CS Málkov 73 u Chomutova | Tankujte výhodně u nás!</title>
-    <meta name="description" content="Čerpací stanice EGAR-CS Málkov 73 u Chomutova. Skvělé ceny paliv: Diesel 44,90 Kč/l, Natural 95 38,90 Kč/l, AdBlue 16,90 Kč/l. Otevřeno denně 7:00–19:00.">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Motoristická typografie s plnou podporou češtiny (ŽÁDNÝ FONT INTER!) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Caveat:wght@700&family=Exo+2:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&family=Kanit:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=Montserrat:ital,wght@0,700;0,800;0,900;1,800;1,900&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Čerpací stanice EGAR-CS | Málkov 73 u Chomutova</title>
+  <meta name="description" content="Čerpací stanice EGAR-CS Málkov 73 u Chomutova. Tankujte výhodně: Diesel, Natural 95 a AdBlue za skvělé ceny. Otevřeno denně 7:00–19:00." />
+  <meta name="theme-color" content="#061a40" />
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['var(--font-body)', 'sans-serif'],
-                        display: ['var(--font-heading)', 'sans-serif'],
-                        totem: ['var(--font-totem)', 'sans-serif'],
-                        hand: ['Caveat', 'cursive'],
-                    },
-                    colors: {
-                        egar: {
-                            50: '#eef6ff',
-                            100: '#d9ebff',
-                            200: '#bcddff',
-                            300: '#8ec8ff',
-                            400: '#59a9ff',
-                            500: '#1a7cff',
-                            600: '#0052cc',
-                            700: '#0042ad',
-                            800: '#0a2e6e',
-                            900: '#082459',
-                            950: '#061a40',
-                        }
-                    },
-                    boxShadow: {
-                        'flyer': '0 22px 55px -12px rgba(6, 26, 64, 0.45), 0 0 0 2px rgba(255, 255, 255, 0.9) inset',
-                        'nav': '0 10px 30px -10px rgba(6, 26, 64, 0.14)',
-                    }
-                }
+  <!-- Google Fonts: Styl č. 1 (Exo 2 + Plus Jakarta Sans + Barlow Condensed) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Exo+2:ital,wght@0,600;0,700;0,800;0,900;1,800;1,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            egar: {
+              navy: '#061a40',
+              dark: '#0a2463',
+              blue: '#004aad',
+              bright: '#0066ff',
+              light: '#e8f1ff',
+              accent: '#e11d48'
             }
+          },
+          fontFamily: {
+            display: ['"Exo 2"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            totem: ['"Barlow Condensed"', '"Exo 2"', 'sans-serif']
+          }
         }
-    </script>
+      }
+    }
+  </script>
 
-    <style>
-        /* Preset 1: Exo 2 Moderní (výchozí) */
-        :root,
-        [data-font-theme="exo"] {
-            --font-heading: 'Exo 2', sans-serif;
-            --font-body: 'Plus Jakarta Sans', sans-serif;
-            --font-totem: 'Exo 2', sans-serif;
-        }
-
-        /* Preset 2: Leták & Totem (Montserrat + Barlow Condensed) */
-        [data-font-theme="flyer"] {
-            --font-heading: 'Montserrat', sans-serif;
-            --font-body: 'Plus Jakarta Sans', sans-serif;
-            --font-totem: 'Barlow Condensed', sans-serif;
-        }
-
-        /* Preset 3: Kanit Sport (Kanit + Outfit) */
-        [data-font-theme="sport"] {
-            --font-heading: 'Kanit', sans-serif;
-            --font-body: 'Outfit', sans-serif;
-            --font-totem: 'Kanit', sans-serif;
-        }
-
-        body {
-            font-family: var(--font-body);
-        }
-
-        /* Modro-bílý design inspirovaný letákem EGAR-CS */
-        .flyer-hero-bg {
-            background: 
-                radial-gradient(circle at 82% 18%, rgba(89, 169, 255, 0.35) 0%, transparent 45%),
-                radial-gradient(circle at 15% 80%, rgba(0, 82, 204, 0.5) 0%, transparent 50%),
-                linear-gradient(135deg, #061a40 0%, #0a2e6e 45%, #0052cc 85%, #1a7cff 100%);
-        }
-
-        /* Řádky ceníku paliv */
-        .fuel-pill-row {
-            background: linear-gradient(180deg, #ffffff 0%, #f1f6fd 100%);
-            box-shadow: 0 8px 20px rgba(6, 26, 64, 0.14), inset 0 2px 0 #ffffff;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .fuel-pill-row:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 26px rgba(6, 26, 64, 0.22), inset 0 2px 0 #ffffff;
-        }
-
-        .badge-diesel {
-            background: linear-gradient(180deg, #2b3036 0%, #0c0e12 100%);
-            clip-path: polygon(0 0, 91% 0, 100% 100%, 0% 100%);
-        }
-
-        .badge-natural {
-            background: linear-gradient(180deg, #12872e 0%, #064e17 100%);
-            clip-path: polygon(0 0, 91% 0, 100% 100%, 0% 100%);
-        }
-
-        .badge-adblue {
-            background: linear-gradient(180deg, #1a8cff 0%, #004eb5 100%);
-            clip-path: polygon(0 0, 91% 0, 100% 100%, 0% 100%);
-        }
-
-        /* Modrý lesklý panel platebních karet */
-        .glossy-blue {
-            background: linear-gradient(165deg, #0052cc 0%, #0a2e6e 58%, #061a40 100%);
-        }
-
-        /* Hover efekt pro položky v horním menu */
-        .nav-pill-link {
-            position: relative;
-            white-space: nowrap;
-        }
-        .nav-pill-link::after {
-            content: "";
-            position: absolute;
-            bottom: 4px;
-            left: 50%;
-            width: 0;
-            height: 3px;
-            border-radius: 9999px;
-            background: linear-gradient(90deg, #0052cc, #1a7cff);
-            transition: all 0.22s ease;
-            transform: translateX(-50%);
-        }
-        .nav-pill-link:hover::after {
-            width: 68%;
-        }
-
-        .tabular-nums {
-            font-variant-numeric: tabular-nums;
-        }
-    </style>
-
-    <!-- Konfigurace stanice (automaticky se aktualizuje při stažení index.html) -->
-    <script id="egar-config-script">
-        window.EGAR_CONFIG = {
-            fontTheme: "exo",
-            contact: {
-                stationName: "Čerpací stanice EGAR-CS Málkov",
-                address: "Málkov 73, u Chomutova",
-                cityZip: "430 01 Málkov (u Chomutova)",
-                phone: "735 226 109",
-                hoursText: "Denně 7:00 – 19:00",
-                openHour: 7,
-                closeHour: 19,
-                facebookUrl: "https://www.facebook.com/share/19iVn2WqEs/"
-            },
-            fuels: [
-                {
-                    id: "diesel",
-                    name: "DIESEL",
-                    sub: "Motorová nafta (EN 590)",
-                    price: "44,90",
-                    styleType: "diesel",
-                    active: true
-                },
-                {
-                    id: "natural95",
-                    name: "NATURAL 95",
-                    sub: "Bezolovnatý benzín (BA 95)",
-                    price: "38,90",
-                    styleType: "natural",
-                    active: true
-                },
-                {
-                    id: "adblue",
-                    name: "AdBlue",
-                    sub: "Čepované ze stojanu (ISO 22241)",
-                    price: "16,90",
-                    styleType: "adblue",
-                    active: true
-                }
-            ]
-        };
-    </script>
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #0f172a;
+      background-color: #f8fafc;
+    }
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Exo 2', sans-serif;
+    }
+    .totem-num {
+      font-family: 'Barlow Condensed', 'Exo 2', sans-serif;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.01em;
+    }
+    .hero-bg {
+      background:
+        radial-gradient(circle at 18% 22%, rgba(0, 128, 255, 0.38) 0%, transparent 48%),
+        radial-gradient(circle at 85% 75%, rgba(0, 74, 173, 0.45) 0%, transparent 52%),
+        linear-gradient(135deg, #04122c 0%, #09255c 48%, #004aad 100%);
+    }
+    .card-shine {
+      background: linear-gradient(180deg, #ffffff 0%, #f4f8ff 100%);
+    }
+    .payment-panel {
+      background: linear-gradient(165deg, #005ce6 0%, #003b99 60%, #06215c 100%);
+    }
+    /* Custom Range Slider */
+    input[type=range].fuel-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 12px;
+      background: #dbeafe;
+      border-radius: 999px;
+      outline: none;
+      cursor: pointer;
+    }
+    input[type=range].fuel-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #004aad;
+      border: 4px solid #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 74, 173, 0.45);
+      cursor: pointer;
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+    input[type=range].fuel-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.1);
+      background: #0066ff;
+    }
+    input[type=range].fuel-slider::-moz-range-thumb {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #004aad;
+      border: 4px solid #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 74, 173, 0.45);
+      cursor: pointer;
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+  </style>
 </head>
-<body data-font-theme="exo" class="bg-slate-50 text-slate-800 antialiased selection:bg-egar-600 selection:text-white">
+<body class="antialiased selection:bg-blue-600 selection:text-white">
 
-    <!-- =====================================================================
-         1. HORNÍ INFORMAČNÍ LIŠTA (#061a40) + RYCHLÉ STAŽENÍ INDEX.HTML
-    ====================================================================== -->
-    <div class="bg-[#061a40] text-blue-100 text-xs border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-y-2 gap-x-4">
-            
-            <!-- Vlevo: Adresa, Otevírací doba a živý indikátor -->
-            <div class="flex flex-wrap items-center gap-x-4 gap-y-1">
-                <a href="#kontakt" class="inline-flex items-center gap-1.5 font-semibold text-white hover:text-sky-300 transition whitespace-nowrap">
-                    <span>📍</span>
-                    <span id="top-address-label">Málkov 73, u Chomutova</span>
-                </a>
-                <span class="hidden sm:inline text-white/25">|</span>
-                <div class="inline-flex items-center gap-1.5 font-semibold text-blue-100 whitespace-nowrap">
-                    <span>🕖</span>
-                    <span id="top-hours-label">Denně 7:00–19:00</span>
-                </div>
-                <span id="live-open-badge" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-extrabold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 whitespace-nowrap">
-                    🟢 PRÁVĚ OTEVŘENO (7:00–19:00)
-                </span>
-            </div>
-
-            <!-- Vpravo: Přepínač 3 stylů písma, Telefon, Facebook a přímé stažení index.html -->
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-1.5 ml-auto">
-                <div class="hidden md:inline-flex items-center gap-1 bg-white/10 px-2 py-0.5 rounded-full border border-white/15">
-                    <span class="text-[10px] uppercase tracking-wider text-sky-300 font-bold px-1">Písmo:</span>
-                    <button type="button" data-set-font="exo" class="font-switch-btn px-2 py-0.5 rounded-full font-bold transition bg-sky-400 text-egar-950">
-                        Exo 2 Moderní
-                    </button>
-                    <button type="button" data-set-font="flyer" class="font-switch-btn px-2 py-0.5 rounded-full font-bold transition text-blue-100 hover:text-white">
-                        Leták &amp; Totem
-                    </button>
-                    <button type="button" data-set-font="sport" class="font-switch-btn px-2 py-0.5 rounded-full font-bold transition text-blue-100 hover:text-white">
-                        Kanit Sport
-                    </button>
-                </div>
-
-                <a id="top-phone-link" href="tel:+420735226109" class="inline-flex items-center gap-1.5 font-display font-extrabold text-white hover:text-sky-300 transition whitespace-nowrap">
-                    <span>📞</span>
-                    <span id="top-phone-text">735 226 109</span>
-                </a>
-
-                <a href="https://www.facebook.com/share/19iVn2WqEs/" target="_blank" rel="noopener noreferrer"
-                   class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1877F2] hover:bg-blue-500 text-white font-display font-bold text-xs shadow-sm transition whitespace-nowrap">
-                    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
-                    <span>Facebook</span>
-                </a>
-
-                <button id="top-download-btn" type="button"
-                        class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-500 hover:bg-emerald-400 text-egar-950 font-display font-extrabold text-xs shadow-sm transition whitespace-nowrap">
-                    <span>⬇ Stáhnout index.html</span>
-                </button>
-            </div>
-
+  <!-- HORNÍ INFORMAČNÍ LIŠTA -->
+  <div class="bg-[#061a40] text-white text-xs sm:text-sm border-b border-blue-900/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex flex-wrap items-center gap-x-5 gap-y-1.5">
+        <a href="#kontakt" class="inline-flex items-center gap-1.5 text-blue-100 hover:text-white transition whitespace-nowrap">
+          <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+          <span class="font-semibold">Málkov 73, u Chomutova</span>
+        </a>
+        <span class="hidden sm:inline text-blue-700">|</span>
+        <div class="inline-flex items-center gap-2 whitespace-nowrap">
+          <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 3"/>
+          </svg>
+          <span class="text-blue-100 font-medium">Denně 7:00–19:00</span>
+          <span id="open-status-badge" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
+            <span id="open-status-dot" class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span id="open-status-text">Otevřeno 7:00–19:00</span>
+          </span>
         </div>
+      </div>
+
+      <div class="flex items-center gap-4 ml-auto">
+        <a href="tel:+420735226109" class="inline-flex items-center gap-1.5 font-bold text-white hover:text-sky-300 transition whitespace-nowrap">
+          <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+          </svg>
+          <span>735 226 109</span>
+        </a>
+        <a href="https://www.facebook.com/share/19iVn2WqEs/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 bg-[#1877F2] hover:bg-[#166fe5] text-white font-bold px-3 py-1 rounded-full text-xs transition shadow-sm whitespace-nowrap">
+          <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+          <span>Facebook</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HLAVNÍ NAVIGACE (BEZ ZALAMOVÁNÍ) -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 shrink-0 group">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#004aad] to-[#061a40] flex items-center justify-center text-white shadow-md shadow-blue-900/20 group-hover:scale-105 transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 21h12M5 21V5a2 2 0 012-2h6a2 2 0 012 2v16M9 7h2m-2 4h2m4-1h2a2 2 0 012 2v5a1.5 1.5 0 003 0V9l-3-3"/>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <div class="font-heading text-2xl sm:text-[26px] font-black italic tracking-tight leading-none whitespace-nowrap">
+            <span class="text-[#061a40]">EGAR</span><span class="text-[#e11d48]">-CS</span>
+          </div>
+          <span class="text-[11px] font-extrabold tracking-widest text-blue-800 uppercase mt-1 whitespace-nowrap">
+            MÁLKOV 73 • U CHOMUTOVA
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden lg:flex items-center gap-1 xl:gap-2">
+        <a href="#cenik" class="px-3 py-2 rounded-lg text-sm font-bold text-slate-700 hover:text-[#004aad] hover:bg-blue-50/80 transition whitespace-nowrap">Ceník paliv</a>
+        <a href="#platby" class="px-3 py-2 rounded-lg text-sm font-bold text-slate-700 hover:text-[#004aad] hover:bg-blue-50/80 transition whitespace-nowrap">Platební karty</a>
+        <a href="#kalkulacka" class="px-3 py-2 rounded-lg text-sm font-bold text-slate-700 hover:text-[#004aad] hover:bg-blue-50/80 transition whitespace-nowrap">Kalkulačka</a>
+        <a href="#sluzby" class="px-3 py-2 rounded-lg text-sm font-bold text-slate-700 hover:text-[#004aad] hover:bg-blue-50/80 transition whitespace-nowrap">Služby</a>
+        <a href="#facebook" class="px-3 py-2 rounded-lg text-sm font-bold text-slate-700 hover:text-[#004aad] hover:bg-blue-50/80 transition whitespace-nowrap">Facebook</a>
+        <a href="#kontakt" class="px-3 py-2 rounded-lg text-sm font-bold text-slate-700 hover:text-[#004aad] hover:bg-blue-50/80 transition whitespace-nowrap">Kde nás najdete</a>
+      </nav>
+
+      <!-- Akční tlačítka vpravo -->
+      <div class="hidden sm:flex items-center gap-2.5 shrink-0">
+        <a href="tel:+420735226109" class="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl border border-blue-200 bg-blue-50/60 hover:bg-blue-100/80 text-[#061a40] font-heading font-extrabold text-sm transition whitespace-nowrap shrink-0">
+          <svg class="w-4 h-4 text-[#004aad] shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+          </svg>
+          <span>735 226 109</span>
+        </a>
+        <a href="https://www.google.com/maps/search/?api=1&query=EGAR-CS+M%C3%A1lkov+73" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#004aad] to-[#0a2463] hover:from-[#005ce6] hover:to-[#004aad] text-white font-heading font-extrabold text-sm shadow-md shadow-blue-900/20 transition whitespace-nowrap shrink-0">
+          <svg class="w-4 h-4 text-sky-300 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+          <span>Navigovat k nám</span>
+        </a>
+      </div>
+
+      <!-- Mobilní tlačítko menu -->
+      <div class="flex items-center gap-2 lg:hidden">
+        <a href="tel:+420735226109" class="sm:hidden inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-blue-200 bg-blue-50 text-[#061a40] font-heading font-extrabold text-xs whitespace-nowrap">
+          <svg class="w-3.5 h-3.5 text-[#004aad]" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+          </svg>
+          <span>735 226 109</span>
+        </a>
+        <button id="mobile-menu-btn" type="button" aria-label="Otevřít menu" class="p-2.5 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100 transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
     </div>
 
-    <!-- =====================================================================
-         2. HLAVNÍ NAVIGAČNÍ MENU (bílé, sticky, vždy na 1 řádku bez zalamování)
-    ====================================================================== -->
-    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-nav border-b border-blue-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20 gap-3">
-                
-                <!-- Logo EGAR-CS -->
-                <a href="#" class="flex items-center gap-3 shrink-0 whitespace-nowrap group">
-                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-egar-600 to-egar-900 text-white flex items-center justify-center shadow-md shadow-egar-600/25 group-hover:scale-105 transition shrink-0">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M3 21h12M5 21V5a2 2 0 012-2h6a2 2 0 012 2v16M9 7h2m-2 4h2m4-3h2a2 2 0 012 2v7a2 2 0 002 2v0a1 1 0 001-1v-9l-3-3"/>
-                        </svg>
-                    </div>
-                    <div class="flex flex-col justify-center whitespace-nowrap shrink-0">
-                        <div class="font-display font-black italic text-2xl sm:text-[26px] tracking-tight leading-none whitespace-nowrap">
-                            <span class="text-[#0a2e6e]">EGAR</span><span class="text-[#e11d48]">-CS</span>
-                        </div>
-                        <div class="text-[10px] sm:text-[11px] font-display font-extrabold uppercase tracking-wider text-egar-700 mt-1 whitespace-nowrap">
-                            MÁLKOV 73 • U CHOMUTOVA
-                        </div>
-                    </div>
-                </a>
+    <!-- Mobilní rozbalovací menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-5 space-y-2 shadow-xl">
+      <a href="#cenik" class="mobile-nav-link block px-4 py-2.5 rounded-xl font-bold text-slate-800 hover:bg-blue-50 hover:text-[#004aad]">⛽ Ceník paliv</a>
+      <a href="#platby" class="mobile-nav-link block px-4 py-2.5 rounded-xl font-bold text-slate-800 hover:bg-blue-50 hover:text-[#004aad]">💳 Platební karty</a>
+      <a href="#kalkulacka" class="mobile-nav-link block px-4 py-2.5 rounded-xl font-bold text-slate-800 hover:bg-blue-50 hover:text-[#004aad]">🧮 Kalkulačka tankování</a>
+      <a href="#sluzby" class="mobile-nav-link block px-4 py-2.5 rounded-xl font-bold text-slate-800 hover:bg-blue-50 hover:text-[#004aad]">⭐ Služby a výhody</a>
+      <a href="#facebook" class="mobile-nav-link block px-4 py-2.5 rounded-xl font-bold text-slate-800 hover:bg-blue-50 hover:text-[#004aad]">👍 Facebook EGAR-CS</a>
+      <a href="#kontakt" class="mobile-nav-link block px-4 py-2.5 rounded-xl font-bold text-slate-800 hover:bg-blue-50 hover:text-[#004aad]">📍 Kde nás najdete</a>
+      <div class="pt-2">
+        <a href="https://www.google.com/maps/search/?api=1&query=EGAR-CS+M%C3%A1lkov+73" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#004aad] text-white font-heading font-extrabold text-sm shadow-md">
+          <span>Spustit navigaci do Málkova 73</span>
+        </a>
+      </div>
+    </div>
+  </header>
 
-                <!-- Položky navigace (striktně na 1 řádku) -->
-                <nav class="hidden xl:flex items-center gap-1 2xl:gap-2 shrink-0 whitespace-nowrap" aria-label="Hlavní navigace">
-                    <a href="#cenik" class="nav-pill-link px-3 py-2 rounded-xl font-display font-bold text-sm text-slate-700 hover:text-egar-700 hover:bg-egar-50/70 transition whitespace-nowrap shrink-0">
-                        Ceník paliv
-                    </a>
-                    <a href="#karty" class="nav-pill-link px-3 py-2 rounded-xl font-display font-bold text-sm text-slate-700 hover:text-egar-700 hover:bg-egar-50/70 transition whitespace-nowrap shrink-0">
-                        Platební karty
-                    </a>
-                    <a href="#kalkulacka" class="nav-pill-link px-3 py-2 rounded-xl font-display font-bold text-sm text-slate-700 hover:text-egar-700 hover:bg-egar-50/70 transition whitespace-nowrap shrink-0">
-                        Kalkulačka
-                    </a>
-                    <a href="#sluzby" class="nav-pill-link px-3 py-2 rounded-xl font-display font-bold text-sm text-slate-700 hover:text-egar-700 hover:bg-egar-50/70 transition whitespace-nowrap shrink-0">
-                        Služby
-                    </a>
-                    <a href="#kontakt" class="nav-pill-link px-3 py-2 rounded-xl font-display font-bold text-sm text-slate-700 hover:text-egar-700 hover:bg-egar-50/70 transition whitespace-nowrap shrink-0">
-                        Kontakt a mapa
-                    </a>
-                </nav>
+  <!-- HERO SEKCE S CENÍKEM A PLATEBNÍMI KARTAMI -->
+  <section id="cenik" class="hero-bg relative overflow-hidden py-10 sm:py-14 lg:py-16 text-white">
+    <!-- Dekorativní světelné kruhy -->
+    <div class="pointer-events-none absolute -top-24 -left-24 w-96 h-96 rounded-full bg-sky-400/10 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-blue-400/15 blur-3xl"></div>
 
-                <!-- Akční tlačítka vpravo -->
-                <div class="hidden lg:flex items-center gap-2.5 shrink-0 whitespace-nowrap">
-                    <a id="nav-phone-btn" href="tel:+420735226109"
-                       class="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-egar-50 hover:bg-egar-100 text-egar-900 border border-egar-200 font-display font-extrabold text-sm transition whitespace-nowrap shrink-0">
-                        <svg class="w-4 h-4 text-egar-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                        </svg>
-                        <span class="whitespace-nowrap">735 226 109</span>
-                    </a>
-
-                    <a href="#kontakt"
-                       class="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-gradient-to-r from-egar-600 to-egar-800 hover:from-egar-700 hover:to-egar-900 text-white font-display font-extrabold text-sm shadow-md shadow-egar-600/25 transition whitespace-nowrap shrink-0">
-                        <svg class="w-4 h-4 text-sky-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                        </svg>
-                        <span class="whitespace-nowrap">Navigovat do Málkova</span>
-                    </a>
-                </div>
-
-                <!-- Mobilní tlačítka -->
-                <div class="flex xl:hidden items-center gap-2 shrink-0">
-                    <a href="tel:+420735226109" class="lg:hidden inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-egar-50 text-egar-900 border border-egar-200 font-display font-extrabold text-xs whitespace-nowrap">
-                        📞 735 226 109
-                    </a>
-                    <button id="mobile-menu-btn" type="button" aria-label="Otevřít menu"
-                            class="p-2.5 rounded-xl bg-slate-100 hover:bg-egar-50 text-egar-950 border border-slate-200 transition">
-                        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M6 18L18 6M6 6l12 12"/>
-                        </svg>
-                    </button>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Rozbalovací mobilní menu -->
-        <div id="mobile-menu" class="hidden xl:hidden bg-white border-t border-slate-100 px-4 pt-3 pb-6 shadow-xl">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
-                <a href="#cenik" class="mobile-nav-link px-4 py-2.5 rounded-xl font-display font-bold text-slate-800 hover:bg-egar-50 hover:text-egar-700">⛽ Ceník paliv</a>
-                <a href="#karty" class="mobile-nav-link px-4 py-2.5 rounded-xl font-display font-bold text-slate-800 hover:bg-egar-50 hover:text-egar-700">💳 Platební karty (CCS a DKV info)</a>
-                <a href="#kalkulacka" class="mobile-nav-link px-4 py-2.5 rounded-xl font-display font-bold text-slate-800 hover:bg-egar-50 hover:text-egar-700">🧮 Kalkulačka tankování</a>
-                <a href="#sluzby" class="mobile-nav-link px-4 py-2.5 rounded-xl font-display font-bold text-slate-800 hover:bg-egar-50 hover:text-egar-700">⭐ Služby</a>
-                <a href="#kontakt" class="mobile-nav-link px-4 py-2.5 rounded-xl font-display font-bold text-slate-800 hover:bg-egar-50 hover:text-egar-700">📍 Kontakt a mapa (Málkov 73)</a>
-            </div>
-
-            <div class="mt-4 pt-3 border-t border-slate-100">
-                <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Styl písma webu:</span>
-                <div class="flex flex-wrap gap-2">
-                    <button type="button" data-set-font="exo" class="font-switch-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-egar-600 text-white">Exo 2 Moderní</button>
-                    <button type="button" data-set-font="flyer" class="font-switch-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-700">Leták &amp; Totem</button>
-                    <button type="button" data-set-font="sport" class="font-switch-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-700">Kanit Sport</button>
-                </div>
-            </div>
-
-            <div class="mt-4 pt-3 border-t border-slate-100 flex flex-col sm:flex-row gap-2.5">
-                <a href="tel:+420735226109" class="flex-1 inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-egar-50 text-egar-900 font-display font-extrabold text-sm border border-egar-200">
-                    📞 Zavolat: 735 226 109
-                </a>
-                <a href="#kontakt" class="mobile-nav-link flex-1 inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-egar-600 text-white font-display font-extrabold text-sm shadow">
-                    📍 Navigovat do Málkova 73
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- =====================================================================
-         3. HERO SEKCE: CENÍK PALIV (#cenik) + PLATEBNÍ KARTY A ZÁKAZ CCS/DKV (#karty)
-    ====================================================================== -->
-    <section class="flyer-hero-bg relative overflow-hidden pt-7 pb-24 sm:pt-10 sm:pb-28 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            
-            <!-- Horní uvítací pruh -->
-            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-7 border-b border-white/15">
-                <div class="flex items-center gap-3.5">
-                    <div class="w-12 h-12 rounded-full bg-white text-egar-800 flex items-center justify-center shadow-lg shrink-0">
-                        <svg class="w-6 h-6 text-egar-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M3 21h12M5 21V5a2 2 0 012-2h6a2 2 0 012 2v16M9 7h2m-2 4h2m4-3h2a2 2 0 012 2v7a2 2 0 002 2v0a1 1 0 001-1v-9l-3-3"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <div class="font-display font-black uppercase tracking-wide text-sm sm:text-base text-sky-300">
-                            ⛽ TANKUJTE VÝHODNĚ U NÁS! 💙
-                        </div>
-                        <p class="text-white/95 text-xs sm:text-sm font-medium mt-0.5">
-                            U nás v <strong>EGAR-CS Málkov</strong> se snažíme, aby se vám tankování vyplatilo. 🚗
-                        </p>
-                    </div>
-                </div>
-
-                <div class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[#061a40]/75 border border-sky-400/40 shadow-lg self-start lg:self-auto whitespace-nowrap">
-                    <span class="text-sky-300 text-base">🕖</span>
-                    <span class="font-display font-extrabold text-xs sm:text-sm tracking-wide uppercase">
-                        OTEVÍRACÍ DOBA: <span id="hero-hours-badge" class="text-sky-300">7:00 – 19:00 (DENNĚ)</span>
-                    </span>
-                </div>
-            </div>
-
-            <!-- Hlavní dvousloupcový grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-8 mt-8 items-stretch">
-                
-                <!-- LEVÁ KARTA: Ceník paliv (#cenik) -->
-                <div id="cenik" class="lg:col-span-7 bg-white text-slate-900 rounded-[2rem] p-6 sm:p-8 shadow-flyer flex flex-col justify-between relative overflow-hidden scroll-mt-24">
-                    
-                    <div>
-                        <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
-                            <div>
-                                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-egar-50 text-egar-700 font-display font-extrabold text-[11px] uppercase tracking-wider mb-2 border border-egar-100">
-                                    📍 EGAR-CS MÁLKOV 73 U CHOMUTOVA
-                                </div>
-                                <h1 class="font-display font-black uppercase text-3xl sm:text-4xl lg:text-[42px] leading-[1.05] tracking-tight text-slate-950">
-                                    SKVĚLÉ CENY
-                                    <span class="block text-egar-600">PALIV PRÁVĚ TEĎ!</span>
-                                </h1>
-                            </div>
-
-                            <!-- Ostrý tmavě modrý odznak EGAR-CS -->
-                            <div class="bg-gradient-to-b from-[#0a2e6e] to-[#061a40] px-4 py-2.5 rounded-2xl shadow-md border border-sky-300/30 text-center shrink-0 whitespace-nowrap">
-                                <div class="font-display font-black italic text-xl tracking-tight leading-none">
-                                    <span class="text-white">EGAR</span><span class="text-[#ff2a4b]">-CS</span>
-                                </div>
-                                <div class="text-[10px] font-display font-bold tracking-widest uppercase text-sky-200 mt-1">
-                                    — MÁLKOV 73 —
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 3 řádky paliv -->
-                        <div id="totem-fuel-rows" class="space-y-3.5 my-2">
-                            <!-- Vykresleno přes renderSite() -->
-                        </div>
-                    </div>
-
-                    <!-- 3 výhody + tlačítko pro úpravu cen -->
-                    <div class="mt-6 pt-5 border-t border-slate-200/80">
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                            <div class="flex items-center justify-center sm:justify-start gap-2.5 bg-egar-50/90 border border-egar-100 rounded-2xl px-3.5 py-2.5">
-                                <span class="w-8 h-8 rounded-full bg-egar-700 text-white flex items-center justify-center text-sm shrink-0 shadow-sm">⚡</span>
-                                <span class="font-display font-black text-xs uppercase tracking-wide text-egar-950 leading-tight">Rychlá obsluha</span>
-                            </div>
-                            <div class="flex items-center justify-center sm:justify-start gap-2.5 bg-egar-50/90 border border-egar-100 rounded-2xl px-3.5 py-2.5">
-                                <span class="w-8 h-8 rounded-full bg-egar-700 text-white flex items-center justify-center text-sm shrink-0 shadow-sm">👍</span>
-                                <span class="font-display font-black text-xs uppercase tracking-wide text-egar-950 leading-tight">Kvalitní paliva</span>
-                            </div>
-                            <div class="flex items-center justify-center sm:justify-start gap-2.5 bg-egar-50/90 border border-egar-100 rounded-2xl px-3.5 py-2.5">
-                                <span class="w-8 h-8 rounded-full bg-egar-700 text-white flex items-center justify-center text-sm shrink-0 shadow-sm">☕</span>
-                                <span class="font-display font-black text-xs uppercase tracking-wide text-egar-950 leading-tight">Příjemné prostředí</span>
-                            </div>
-                        </div>
-
-                        <div class="mt-4 flex flex-wrap items-center justify-between gap-2 text-xs">
-                            <span class="text-slate-500 font-semibold">Ceny jsou uvedeny vč. DPH • Málkov 73 u Chomutova</span>
-                            <button id="open-admin-btn" type="button"
-                                    class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-egar-600 text-slate-700 hover:text-white font-display font-bold text-xs transition">
-                                <span>⚙️ Upravit ceny / Stáhnout index.html</span>
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- PRAVÁ KARTA: Platební karty + MAXIMÁLNĚ PŘEHLEDNÝ ZÁKAZ CCS a DKV (#karty) -->
-                <div id="karty" class="lg:col-span-5 glossy-blue rounded-[2rem] p-6 sm:p-7 shadow-flyer border-2 border-sky-300/60 flex flex-col justify-between scroll-mt-24">
-                    
-                    <div class="text-center">
-                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/15 border border-white/30 text-xs font-display font-extrabold uppercase tracking-wider text-sky-200 mb-2">
-                            💳 Bezkontaktní platby i hotovost
-                        </div>
-                        <h2 class="font-display font-black italic text-2xl sm:text-3xl text-white leading-tight">
-                            U nás můžete platit kartou!
-                        </h2>
-                        <p class="text-xs sm:text-sm text-sky-200 font-semibold mt-1">
-                            Přijímáme běžné bankovní karty, Apple Pay i Google Pay
-                        </p>
-                    </div>
-
-                    <!-- Bílý přehledný box s kartami -->
-                    <div class="bg-white rounded-2xl p-4 my-4 shadow-inner space-y-3 text-slate-900">
-                        
-                        <div class="flex items-center justify-between">
-                            <span class="text-[11px] font-display font-black uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full">
-                                ✔ PŘIJÍMÁME TYTO KARTY
-                            </span>
-                            <span class="text-[11px] font-bold text-slate-400">VISA • MasterCard • Maestro</span>
-                        </div>
-
-                        <!-- Mřížka přijímaných karet -->
-                        <div class="grid grid-cols-2 gap-2">
-                            <!-- VISA -->
-                            <div class="bg-white rounded-xl border border-slate-200 p-2 flex flex-col items-center justify-center h-14 shadow-sm">
-                                <div class="w-full h-1 bg-[#1a1f71] rounded-t-sm"></div>
-                                <span class="font-display font-black italic text-xl tracking-wider text-[#1a1f71] leading-none my-1">VISA</span>
-                                <div class="w-full h-1 bg-[#f7b600] rounded-b-sm"></div>
-                            </div>
-
-                            <!-- VISA Electron -->
-                            <div class="bg-[#1a1f71] text-white rounded-xl border border-[#1a1f71] p-2 flex flex-col items-center justify-center h-14 shadow-sm">
-                                <span class="font-display font-black italic text-lg tracking-wider leading-none">VISA</span>
-                                <span class="text-[10px] font-bold tracking-wide text-sky-200 mt-0.5">Electron</span>
-                            </div>
-
-                            <!-- MasterCard -->
-                            <div class="bg-white rounded-xl border border-slate-200 p-2 flex items-center justify-center h-14 shadow-sm relative">
-                                <div class="flex items-center">
-                                    <span class="w-7 h-7 rounded-full bg-[#eb001b]"></span>
-                                    <span class="w-7 h-7 rounded-full bg-[#f79e1b] -ml-2.5 mix-blend-multiply"></span>
-                                </div>
-                                <span class="ml-2 font-display font-black text-xs text-slate-900">MasterCard</span>
-                            </div>
-
-                            <!-- Maestro -->
-                            <div class="bg-white rounded-xl border border-slate-200 p-2 flex items-center justify-center h-14 shadow-sm relative">
-                                <div class="flex items-center">
-                                    <span class="w-7 h-7 rounded-full bg-[#eb001b]"></span>
-                                    <span class="w-7 h-7 rounded-full bg-[#00a2e5] -ml-2.5"></span>
-                                </div>
-                                <span class="ml-2 font-display font-black text-xs text-slate-900">Maestro</span>
-                            </div>
-                        </div>
-
-                        <!-- Diners Club International -->
-                        <div class="bg-slate-50 rounded-xl border border-slate-200 py-2 px-3 flex items-center justify-center gap-2">
-                            <div class="w-6 h-6 rounded-full border-2 border-[#004a97] flex items-center justify-center font-display font-black text-[11px] text-[#004a97]">
-                                D
-                            </div>
-                            <span class="font-display font-black text-xs text-slate-800">Diners Club International®</span>
-                        </div>
-
-                        <!-- =================================================================
-                             VYSOCE PŘEHLEDNÝ A ČITELNÝ BOX ZAKÁZANÝCH KARET CCS A DKV
-                             (Žádné tlusté čáry přes text – 100% čitelné i na mobilu!)
-                        ================================================================== -->
-                        <div class="bg-red-600 rounded-2xl p-3.5 text-white border-2 border-red-500 shadow-lg mt-2">
-                            
-                            <!-- Horní výstražný nadpis -->
-                            <div class="flex items-center justify-center gap-1.5 text-center font-display font-black uppercase text-xs sm:text-sm tracking-wide text-white mb-2.5">
-                                <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-white text-red-600 font-black text-xs shrink-0">✕</span>
-                                <span>TANKOVACÍ KARTY NEPŘIJÍMÁME</span>
-                            </div>
-
-                            <!-- 2 přehledné karty vedle sebe: CCS a DKV (čistý čitelný nápis + jasný štítek NEBEREME) -->
-                            <div class="grid grid-cols-2 gap-2.5">
-                                
-                                <!-- Karta CCS -->
-                                <div class="bg-white text-slate-900 rounded-xl p-2.5 border-2 border-red-200 shadow-sm flex flex-col items-center justify-between">
-                                    <div class="w-full flex items-center justify-between mb-1">
-                                        <span class="text-[10px] font-display font-extrabold uppercase text-slate-400">Karta</span>
-                                        <span class="w-5 h-5 rounded-full bg-red-100 text-red-600 font-black text-xs flex items-center justify-center" title="Nepřijímáme">🚫</span>
-                                    </div>
-                                    <div class="w-full py-1.5 rounded-lg bg-[#002f6c] text-white text-center font-display font-black italic text-xl tracking-wider shadow-sm">
-                                        CCS
-                                    </div>
-                                    <span class="mt-2 w-full text-center py-0.5 px-2 rounded-md bg-red-600 text-white font-display font-black text-[11px] uppercase tracking-wider">
-                                        🚫 NEBEREME
-                                    </span>
-                                </div>
-
-                                <!-- Karta DKV -->
-                                <div class="bg-white text-slate-900 rounded-xl p-2.5 border-2 border-red-200 shadow-sm flex flex-col items-center justify-between">
-                                    <div class="w-full flex items-center justify-between mb-1">
-                                        <span class="text-[10px] font-display font-extrabold uppercase text-slate-400">Karta</span>
-                                        <span class="w-5 h-5 rounded-full bg-red-100 text-red-600 font-black text-xs flex items-center justify-center" title="Nepřijímáme">🚫</span>
-                                    </div>
-                                    <div class="w-full py-1.5 rounded-lg bg-[#f59e0b] text-white text-center font-display font-black italic text-xl tracking-wider shadow-sm">
-                                        DKV
-                                    </div>
-                                    <span class="mt-2 w-full text-center py-0.5 px-2 rounded-md bg-red-600 text-white font-display font-black text-[11px] uppercase tracking-wider">
-                                        🚫 NEBEREME
-                                    </span>
-                                </div>
-
-                            </div>
-
-                            <!-- Spodní jasné sdělení -->
-                            <div class="mt-3 text-center">
-                                <div class="font-display font-black uppercase text-sm sm:text-base tracking-wide text-white leading-tight">
-                                    CCS a DKV NEPŘIJÍMÁME!
-                                </div>
-                                <p class="text-[11px] sm:text-xs text-red-100 font-semibold mt-0.5 leading-snug">
-                                    Karty CCS a DKV u nás nelze použít. Platba je možná běžnou platební kartou nebo hotově.
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="text-center text-xs text-sky-200 font-semibold">
-                        Děkujeme za pochopení • Těšíme se na vaši návštěvu! 💙
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- Spodní dekorativní vlna -->
-        <div class="absolute bottom-0 left-0 right-0 pointer-events-none">
-            <svg viewBox="0 0 1440 70" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-10 sm:h-14">
-                <path d="M0 40C320 90 680 -10 1080 35C1260 55 1380 60 1440 45V70H0V40Z" fill="#f8fafc"/>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <!-- Horní uvítací pruh -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-8 mb-8 border-b border-white/15">
+        <div class="flex items-start sm:items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-white text-[#004aad] flex items-center justify-center shrink-0 shadow-lg">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 21h12M5 21V5a2 2 0 012-2h6a2 2 0 012 2v16M9 7h2m-2 4h2m4-1h2a2 2 0 012 2v5a1.5 1.5 0 003 0V9l-3-3"/>
             </svg>
-        </div>
-    </section>
-
-    <!-- =====================================================================
-         4. JEDNODUCHÁ A KOMPAKTNÍ KALKULAČKA TANKOVÁNÍ PO 5 LITRECH (#kalkulacka)
-         (Žádné zbytečné posuvníky spotřeby ani přepočty dojezdu – vše v 1 čisté kartě!)
-    ====================================================================== -->
-    <section id="kalkulacka" class="relative z-20 -mt-10 px-4 sm:px-6 lg:px-8 scroll-mt-24">
-        <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl shadow-blue-950/15 border-2 border-blue-100 p-5 sm:p-8">
-            
-            <!-- Stručná hlavička kalkulačky -->
-            <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-slate-100">
-                <div>
-                    <span class="inline-block px-3 py-0.5 rounded-full bg-egar-100 text-egar-700 font-display font-extrabold text-[11px] uppercase tracking-wider">
-                        🧮 Rychlý výpočet ceny • Krok po 5 l
-                    </span>
-                    <h2 class="text-xl sm:text-2xl font-display font-black text-egar-950 mt-1">
-                        Jednoduchá kalkulačka tankování
-                    </h2>
-                </div>
-                <span class="text-xs font-bold text-slate-400">EGAR-CS Málkov 73</span>
+          </div>
+          <div>
+            <div class="inline-flex items-center gap-2 text-sky-300 font-heading font-extrabold text-xs sm:text-sm uppercase tracking-wider">
+              <span>⛽ TANKUJTE VÝHODNĚ U NÁS! 💙</span>
             </div>
-
-            <!-- KROK 1: Výběr paliva (3 velká přehledná tlačítka) -->
-            <div class="mt-5">
-                <label class="block text-xs font-display font-extrabold uppercase tracking-wider text-slate-500 mb-2">
-                    1. Vyberte palivo:
-                </label>
-                <div id="calc-fuel-cards" class="grid grid-cols-3 gap-2.5">
-                    <!-- Dynamicky generováno z EGAR_CONFIG -->
-                </div>
-                <select id="calc-fuel" class="sr-only" aria-label="Vyberte palivo"></select>
-            </div>
-
-            <!-- KROK 2: Množství paliva po 5 litrech (5 l – 100 l) -->
-            <div class="mt-5 bg-slate-50 rounded-2xl p-4 sm:p-5 border border-slate-200/80">
-                <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
-                    <label for="calc-liters" class="text-xs font-display font-extrabold uppercase tracking-wider text-slate-600">
-                        2. Počet litrů (posuvník po 5 l):
-                    </label>
-
-                    <!-- Tlačítka − 5 l | 50 l | + 5 l -->
-                    <div class="inline-flex items-center gap-1.5 bg-white p-1 rounded-xl border border-slate-200 shadow-sm">
-                        <button id="calc-minus-5" type="button"
-                                class="px-3.5 py-1.5 rounded-lg bg-egar-50 hover:bg-egar-600 text-egar-900 hover:text-white font-display font-black text-sm transition active:scale-95 select-none">
-                            − 5 l
-                        </button>
-                        <span id="calc-liters-val" class="font-totem font-black text-2xl text-egar-700 px-3 min-w-[78px] text-center tabular-nums">
-                            50 l
-                        </span>
-                        <button id="calc-plus-5" type="button"
-                                class="px-3.5 py-1.5 rounded-lg bg-egar-50 hover:bg-egar-600 text-egar-900 hover:text-white font-display font-black text-sm transition active:scale-95 select-none">
-                            + 5 l
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Posuvník po 5 litrech -->
-                <input id="calc-liters" type="range" min="5" max="100" step="5" value="50"
-                       class="w-full h-3 bg-egar-200 rounded-lg accent-egar-600 cursor-pointer">
-                
-                <div class="flex justify-between text-[11px] text-slate-400 font-display font-bold mt-1.5 px-0.5 select-none">
-                    <span>5 l</span>
-                    <span>25 l</span>
-                    <span>50 l</span>
-                    <span>75 l</span>
-                    <span>100 l</span>
-                </div>
-
-                <!-- 4 rychlé předvolby objemu -->
-                <div class="mt-3.5 pt-3 border-t border-slate-200/70 flex flex-wrap items-center justify-between gap-2">
-                    <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Rychlá volba:</span>
-                    <div class="grid grid-cols-4 gap-2 w-full sm:w-auto sm:flex">
-                        <button type="button" data-liters="20" class="preset-liters-btn px-3.5 py-1.5 rounded-xl text-xs font-display font-extrabold bg-white border border-slate-200 text-slate-700 hover:border-egar-500 transition">20 l</button>
-                        <button type="button" data-liters="40" class="preset-liters-btn px-3.5 py-1.5 rounded-xl text-xs font-display font-extrabold bg-white border border-slate-200 text-slate-700 hover:border-egar-500 transition">40 l</button>
-                        <button type="button" data-liters="60" class="preset-liters-btn px-3.5 py-1.5 rounded-xl text-xs font-display font-extrabold bg-white border border-slate-200 text-slate-700 hover:border-egar-500 transition">60 l</button>
-                        <button type="button" data-liters="80" class="preset-liters-btn px-3.5 py-1.5 rounded-xl text-xs font-display font-extrabold bg-white border border-slate-200 text-slate-700 hover:border-egar-500 transition">80 l</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- VÝSLEDEK: Kompaktní modrá lišta s celkovou cenou přímo dole v kartě -->
-            <div class="mt-5 bg-gradient-to-r from-[#061a40] via-[#0a2e6e] to-[#0052cc] text-white rounded-2xl p-5 sm:px-7 sm:py-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg">
-                <div class="text-center sm:text-left">
-                    <span id="calc-summary-badge" class="inline-block px-3 py-0.5 rounded-full bg-white/15 text-sky-200 font-display font-extrabold text-xs uppercase tracking-wider">
-                        DIESEL • 50 litrů
-                    </span>
-                    <div class="text-sm sm:text-base font-bold text-blue-100 mt-1">
-                        Orientační cena tankování celkem:
-                    </div>
-                    <div id="calc-unit-info" class="text-xs text-sky-300 font-semibold">
-                        50 l × 44,90 Kč/l vč. DPH
-                    </div>
-                </div>
-
-                <div class="text-center sm:text-right">
-                    <div id="calc-total" class="text-4xl sm:text-5xl font-totem font-black text-white tracking-tight tabular-nums leading-none">
-                        2 245 Kč
-                    </div>
-                    <span class="text-[11px] text-sky-200 font-semibold block mt-1">
-                        Hotově nebo běžnou platební kartou
-                    </span>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- =====================================================================
-         5. SEKCE SLUŽBY A VÝHODY (#sluzby)
-    ====================================================================== -->
-    <section id="sluzby" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-24">
-        <div class="text-center max-w-3xl mx-auto mb-12">
-            <span class="inline-block px-4 py-1.5 rounded-full bg-egar-100 text-egar-700 font-display font-extrabold text-xs uppercase tracking-wider mb-3">
-                ⭐ Služby a výhody • EGAR-CS Málkov 73
-            </span>
-            <h2 class="text-3xl sm:text-4xl font-display font-black text-egar-950 tracking-tight">
-                Proč tankovat právě u nás v Málkově?
-            </h2>
-            <p class="mt-3 text-slate-600 text-base sm:text-lg">
-                Zakládáme si na férových cenách paliv, rychlé obsluze a pohodlném zázemí pro řidiče osobních aut, dodávek i nákladních vozů u Chomutova.
+            <p class="text-white text-base sm:text-lg font-bold mt-0.5">
+              U nás v <span class="text-sky-300">EGAR-CS Málkov</span> se snažíme, aby se vám tankování vyplatilo. 🚗
             </p>
+          </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl border border-blue-100 transition">
-                <div class="w-12 h-12 rounded-2xl bg-egar-600 text-white flex items-center justify-center mb-4 shadow-md text-xl">⛽</div>
-                <h3 class="text-xl font-display font-black text-egar-950 mb-2">Výhodné ceny paliv každý den</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">
-                    Držíme dlouhodobě skvělé a férové ceny pro osobní i užitkové vozy, aby se vám každé natankování v Málkově 73 vyplatilo.
+        <div class="inline-flex items-center gap-2.5 self-start md:self-auto px-4 py-2.5 rounded-full bg-[#061a40]/80 border border-sky-400/40 shadow-inner whitespace-nowrap">
+          <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 3"/>
+          </svg>
+          <span class="font-heading font-extrabold text-xs sm:text-sm tracking-wide uppercase">
+            OTEVÍRACÍ DOBA: <span class="text-sky-300">7:00 – 19:00</span> (DENNĚ)
+          </span>
+        </div>
+      </div>
+
+      <!-- Hlavní dvousloupcový grid: Ceník paliv (vlevo) + Platební karty (vpravo) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+
+        <!-- LEVÝ PANEL: CENÍK PALIV -->
+        <div class="lg:col-span-7 card-shine text-slate-900 rounded-3xl p-6 sm:p-8 shadow-2xl border-2 border-white/90 flex flex-col justify-between">
+          <div>
+            <!-- Hlavička ceníku -->
+            <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
+              <div>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 text-[#004aad] font-heading font-extrabold text-xs uppercase tracking-wider mb-2">
+                  📍 EGAR-CS MÁLKOV 73 U CHOMUTOVA
+                </span>
+                <h1 class="font-heading text-3xl sm:text-4xl font-black uppercase tracking-tight leading-none text-[#061a40]">
+                  SKVĚLÉ CENY
+                  <span class="block text-[#004aad] mt-1">PALIV PRÁVĚ TEĎ!</span>
+                </h1>
+              </div>
+
+              <!-- Ostrý odznak EGAR-CS -->
+              <div class="bg-gradient-to-b from-[#0a2463] to-[#061a40] text-white px-4 py-2.5 rounded-2xl shadow-md border border-blue-400/30 text-center shrink-0">
+                <div class="font-heading font-black italic text-lg tracking-tight leading-none">
+                  <span>EGAR</span><span class="text-[#ff3b5c]">-CS</span>
+                </div>
+                <div class="text-[10px] font-bold tracking-widest text-sky-300 uppercase mt-1">
+                  — MÁLKOV 73 —
+                </div>
+              </div>
+            </div>
+
+            <!-- Řádky totemu paliv -->
+            <div class="space-y-4 my-6">
+
+              <!-- DIESEL -->
+              <div class="group relative flex items-stretch rounded-2xl overflow-hidden shadow-md border-2 border-slate-300 bg-white hover:border-slate-800 transition">
+                <div class="w-36 sm:w-44 bg-gradient-to-br from-slate-900 via-slate-800 to-black text-white flex flex-col items-center justify-center py-4 px-3 shrink-0 relative">
+                  <svg class="w-6 h-6 text-white mb-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                  </svg>
+                  <span class="font-heading font-black text-lg sm:text-xl tracking-wider uppercase">DIESEL</span>
+                  <span class="text-[10px] text-slate-300 font-semibold uppercase tracking-widest">Motorová nafta</span>
+                </div>
+                <div class="flex-1 flex items-center justify-end px-5 sm:px-8 py-3 bg-gradient-to-b from-white to-slate-50">
+                  <div class="flex items-baseline gap-2">
+                    <span class="totem-num text-5xl sm:text-6xl font-black text-slate-950 leading-none">44,90</span>
+                    <span class="font-heading font-extrabold text-lg sm:text-xl text-slate-700">Kč/l</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- NATURAL 95 -->
+              <div class="group relative flex items-stretch rounded-2xl overflow-hidden shadow-md border-2 border-emerald-600/40 bg-white hover:border-emerald-700 transition">
+                <div class="w-36 sm:w-44 bg-gradient-to-br from-[#0f7a38] via-[#0c632d] to-[#07471f] text-white flex flex-col items-center justify-center py-4 px-3 shrink-0">
+                  <div class="w-8 h-8 rounded-full bg-white text-[#0c632d] font-heading font-black text-base flex items-center justify-center shadow-sm mb-1">
+                    95
+                  </div>
+                  <span class="font-heading font-black text-base sm:text-lg tracking-wide uppercase leading-tight text-center">NATURAL 95</span>
+                  <span class="text-[10px] text-emerald-100 font-semibold uppercase tracking-widest">Benzín BA 95</span>
+                </div>
+                <div class="flex-1 flex items-center justify-end px-5 sm:px-8 py-3 bg-gradient-to-b from-white to-emerald-50/30">
+                  <div class="flex items-baseline gap-2">
+                    <span class="totem-num text-5xl sm:text-6xl font-black text-[#0c632d] leading-none">38,90</span>
+                    <span class="font-heading font-extrabold text-lg sm:text-xl text-[#0c632d]">Kč/l</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- AdBlue -->
+              <div class="group relative flex items-stretch rounded-2xl overflow-hidden shadow-md border-2 border-blue-500/40 bg-white hover:border-blue-600 transition">
+                <div class="w-36 sm:w-44 bg-gradient-to-br from-[#0072e5] via-[#0059b8] to-[#00428a] text-white flex flex-col items-center justify-center py-4 px-3 shrink-0">
+                  <svg class="w-6 h-6 text-sky-200 mb-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                  </svg>
+                  <span class="font-heading font-black text-lg sm:text-xl tracking-wide">AdBlue</span>
+                  <span class="text-[10px] text-sky-100 font-semibold uppercase tracking-widest">Čistá kapalina</span>
+                </div>
+                <div class="flex-1 flex items-center justify-end px-5 sm:px-8 py-3 bg-gradient-to-b from-white to-blue-50/40">
+                  <div class="flex items-baseline gap-2">
+                    <span class="totem-num text-5xl sm:text-6xl font-black text-[#0052ad] leading-none">16,90</span>
+                    <span class="font-heading font-extrabold text-lg sm:text-xl text-[#0052ad]">Kč/l</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Spodní 3 benefity z letáku -->
+          <div class="pt-5 border-t border-slate-200 grid grid-cols-3 gap-2 sm:gap-4">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-2 text-center sm:text-left bg-blue-50/70 rounded-xl p-2.5 border border-blue-100">
+              <div class="w-9 h-9 rounded-full bg-[#004aad] text-white flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+              </div>
+              <span class="font-heading font-extrabold text-xs sm:text-sm text-[#061a40] uppercase leading-tight">Rychlá<br class="hidden sm:inline"/> obsluha</span>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-2 text-center sm:text-left bg-blue-50/70 rounded-xl p-2.5 border border-blue-100">
+              <div class="w-9 h-9 rounded-full bg-[#004aad] text-white flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/>
+                </svg>
+              </div>
+              <span class="font-heading font-extrabold text-xs sm:text-sm text-[#061a40] uppercase leading-tight">Kvalitní<br class="hidden sm:inline"/> paliva</span>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-2 text-center sm:text-left bg-blue-50/70 rounded-xl p-2.5 border border-blue-100">
+              <div class="w-9 h-9 rounded-full bg-[#004aad] text-white flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zm4-4h8"/>
+                </svg>
+              </div>
+              <span class="font-heading font-extrabold text-xs sm:text-sm text-[#061a40] uppercase leading-tight">Příjemné<br class="hidden sm:inline"/> prostředí</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRAVÝ PANEL: PLATEBNÍ KARTY + PŘEHLEDNÝ ZÁKAZ CCS A DKV -->
+        <div id="platby" class="lg:col-span-5 payment-panel rounded-3xl p-6 sm:p-8 shadow-2xl border-2 border-sky-300/60 flex flex-col justify-between">
+          <div>
+            <!-- Hlavička plateb -->
+            <div class="text-center mb-6">
+              <div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-white/15 border border-white/30 flex items-center justify-center text-white shadow-inner">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <rect x="2" y="5" width="20" height="14" rx="2"/>
+                  <line x1="2" y1="10" x2="22" y2="10"/>
+                </svg>
+              </div>
+              <h2 class="font-heading text-2xl sm:text-3xl font-black italic tracking-tight text-white">
+                U nás můžete platit kartou!
+              </h2>
+              <p class="text-sky-200 text-xs sm:text-sm font-medium mt-1">
+                Přijímáme hotovost, běžné platební karty i Apple Pay / Google Pay
+              </p>
+            </div>
+
+            <!-- Bílý box s přijímanými kartami -->
+            <div class="bg-white rounded-2xl p-4 sm:p-5 text-slate-900 shadow-xl space-y-4">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-2.5">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-700 flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                  Přijímáme tyto platební karty:
+                </span>
+                <span class="text-[11px] font-bold text-slate-400">Bezkontaktně</span>
+              </div>
+
+              <!-- Grid přijímaných karet -->
+              <div class="grid grid-cols-2 gap-3">
+                <!-- VISA -->
+                <div class="h-14 rounded-xl border border-slate-200 bg-white flex flex-col items-center justify-center px-3 shadow-sm">
+                  <div class="w-full h-1.5 bg-[#1a1f71] rounded-t-sm mb-1"></div>
+                  <span class="font-heading font-black italic text-xl tracking-wider text-[#1a1f71] leading-none">VISA</span>
+                  <div class="w-full h-1.5 bg-[#f7b600] rounded-b-sm mt-1"></div>
+                </div>
+
+                <!-- VISA Electron -->
+                <div class="h-14 rounded-xl bg-[#1a1f71] text-white flex flex-col items-center justify-center px-3 shadow-sm">
+                  <span class="font-heading font-black italic text-lg tracking-wider leading-none">VISA</span>
+                  <span class="text-[11px] font-bold tracking-wide text-sky-200 mt-0.5">Electron</span>
+                </div>
+
+                <!-- MasterCard -->
+                <div class="h-14 rounded-xl border border-slate-200 bg-white flex items-center justify-center gap-2 px-3 shadow-sm">
+                  <div class="flex items-center -space-x-2">
+                    <span class="w-6 h-6 rounded-full bg-[#eb001b] opacity-90"></span>
+                    <span class="w-6 h-6 rounded-full bg-[#f79e1b] opacity-90"></span>
+                  </div>
+                  <span class="font-heading font-extrabold text-xs sm:text-sm text-slate-900">MasterCard</span>
+                </div>
+
+                <!-- Maestro -->
+                <div class="h-14 rounded-xl border border-slate-200 bg-white flex items-center justify-center gap-2 px-3 shadow-sm">
+                  <div class="flex items-center -space-x-2">
+                    <span class="w-6 h-6 rounded-full bg-[#eb001b] opacity-90"></span>
+                    <span class="w-6 h-6 rounded-full bg-[#00a2e5] opacity-90"></span>
+                  </div>
+                  <span class="font-heading font-extrabold text-xs sm:text-sm text-slate-900">Maestro</span>
+                </div>
+
+                <!-- Diners Club International -->
+                <div class="col-span-2 h-12 rounded-xl border border-slate-200 bg-slate-50 flex items-center justify-center gap-2.5 px-4 shadow-sm">
+                  <div class="w-6 h-6 rounded-full border-2 border-[#004aad] text-[#004aad] font-black text-xs flex items-center justify-center">
+                    D
+                  </div>
+                  <div class="leading-tight text-left">
+                    <span class="font-heading font-extrabold text-xs sm:text-sm text-slate-800 block">Diners Club</span>
+                    <span class="text-[10px] font-semibold text-slate-500 block">International®</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PŘEHLEDNÝ ČERVENÝ VÝSTRAŽNÝ BOX: CCS a DKV NEPŘIJÍMÁME -->
+              <div class="mt-4 rounded-2xl bg-gradient-to-b from-[#dc2626] to-[#991b1b] p-4 text-white shadow-lg border-2 border-red-300">
+                <div class="flex items-center justify-center gap-2 mb-3">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-white text-red-700 font-black text-xs shrink-0">✕</span>
+                  <span class="font-heading font-black text-sm sm:text-base uppercase tracking-wide text-center">
+                    CCS a DKV NEPŘIJÍMÁME!
+                  </span>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                  <!-- Karta CCS - jasně čitelná bez čáry přes písmena -->
+                  <div class="bg-white rounded-xl p-2.5 text-center shadow-md border-2 border-red-200 flex flex-col items-center justify-between">
+                    <div class="w-full py-1.5 rounded-lg bg-[#061a40] text-white font-heading font-black text-xl tracking-widest">
+                      CCS
+                    </div>
+                    <span class="mt-2 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-red-100 text-red-700 font-heading font-extrabold text-[11px] uppercase tracking-wider">
+                      🚫 NEBEREME
+                    </span>
+                  </div>
+
+                  <!-- Karta DKV - jasně čitelná bez čáry přes písmena -->
+                  <div class="bg-white rounded-xl p-2.5 text-center shadow-md border-2 border-red-200 flex flex-col items-center justify-between">
+                    <div class="w-full py-1.5 rounded-lg bg-[#f59e0b] text-slate-950 font-heading font-black italic text-xl tracking-widest">
+                      DKV
+                    </div>
+                    <span class="mt-2 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-red-100 text-red-700 font-heading font-extrabold text-[11px] uppercase tracking-wider">
+                      🚫 NEBEREME
+                    </span>
+                  </div>
+                </div>
+
+                <p class="text-[11px] text-red-100 text-center font-semibold mt-2.5">
+                  Tankovací karty CCS a DKV na naší stanici nelze uplatnit.
                 </p>
+              </div>
             </div>
+          </div>
 
-            <div class="bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl border border-blue-100 transition">
-                <div class="w-12 h-12 rounded-2xl bg-egar-800 text-white flex items-center justify-center mb-4 shadow-md text-xl">⚡</div>
-                <h3 class="text-xl font-display font-black text-egar-950 mb-2">Rychlá obsluha 7:00 – 19:00</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">
-                    Žádné zbytečné zdržování ve frontách. Naše obsluha vás rychle a s úsměvem odbaví každý den včetně víkendů.
-                </p>
-            </div>
-
-            <div class="bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl border border-blue-100 transition">
-                <div class="w-12 h-12 rounded-2xl bg-emerald-700 text-white flex items-center justify-center mb-4 shadow-md text-xl">👍</div>
-                <h3 class="text-xl font-display font-black text-egar-950 mb-2">Kvalitní paliva a čepované AdBlue</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">
-                    Tankujete prověřený motorový Diesel, bezolovnatý Natural 95 a čisté AdBlue® čepované přímo ze stojanu za 16,90 Kč/l.
-                </p>
-            </div>
-
-            <div class="bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl border border-blue-100 transition">
-                <div class="w-12 h-12 rounded-2xl bg-egar-600 text-white flex items-center justify-center mb-4 shadow-md text-xl">☕</div>
-                <h3 class="text-xl font-display font-black text-egar-950 mb-2">Příjemné prostředí a káva</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">
-                    Dopřejte si čerstvou kávu na cestu, chlazené nápoje, drobné občerstvení i kapaliny do ostřikovačů a autokosmetiku.
-                </p>
-            </div>
-
-            <div class="bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl border border-blue-100 transition">
-                <div class="w-12 h-12 rounded-2xl bg-slate-900 text-white flex items-center justify-center mb-4 shadow-md text-xl">🚛</div>
-                <h3 class="text-xl font-display font-black text-egar-950 mb-2">Snadný příjezd u tahu I/13</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">
-                    Výborná dostupnost v obci Málkov 73 u silnice I/13 kousek od Chomutova. Prostorné zastřešené stání i pro dodávky a LKW.
-                </p>
-            </div>
-
-            <div class="bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl border border-blue-100 transition">
-                <div class="w-12 h-12 rounded-2xl bg-egar-700 text-white flex items-center justify-center mb-4 shadow-md text-xl">💳</div>
-                <h3 class="text-xl font-display font-black text-egar-950 mb-2">Platba kartou i hotově</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">
-                    Přijímáme karty VISA, MasterCard, Maestro, Diners Club i Apple Pay / Google Pay. <strong class="text-red-600">(Karty CCS a DKV nepřijímáme.)</strong>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- =====================================================================
-         6. FACEBOOK SEKCE PODLE LETÁKU (#facebook)
-    ====================================================================== -->
-    <section id="facebook" class="py-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-24">
-        <div class="flyer-hero-bg rounded-3xl p-7 sm:p-10 text-white shadow-2xl border-2 border-sky-300/40 relative overflow-hidden">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-                <div class="lg:col-span-7 space-y-4">
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 border border-white/25 text-xs sm:text-sm font-display font-extrabold text-sky-200">
-                        <span>Sledujte nás, buďte s námi v kontaktu! ❤️</span>
-                    </div>
-
-                    <div class="flex flex-col sm:flex-row sm:items-center gap-4">
-                        <div class="w-16 h-16 rounded-full bg-[#1877F2] border-4 border-white shadow-xl flex items-center justify-center shrink-0">
-                            <svg class="w-9 h-9 text-white fill-current" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
-                        </div>
-                        <div class="bg-amber-300 text-egar-950 px-5 py-3 rounded-2xl shadow-lg border-2 border-white">
-                            <h2 class="font-display font-black italic text-2xl sm:text-3xl leading-tight">
-                                Staňte se našimi přáteli na <span class="text-[#0042ad] underline">Facebooku! 💙</span>
-                            </h2>
-                        </div>
-                    </div>
-
-                    <p class="text-blue-100 text-sm sm:text-base max-w-xl">
-                        Na naší facebookové stránce <strong>Čerpací stanice EGAR-CS Málkov</strong> zveřejňujeme aktuální ceny paliv a novinky z provozu.
-                    </p>
-
-                    <div class="pt-1">
-                        <a href="https://www.facebook.com/share/19iVn2WqEs/" target="_blank" rel="noopener noreferrer"
-                           class="inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-2xl bg-white text-egar-900 hover:bg-sky-50 font-display font-black text-sm sm:text-base shadow-xl transition">
-                            <span>Otevřít Facebook EGAR-CS Málkov</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-5">
-                    <div class="bg-white text-egar-950 rounded-3xl p-6 shadow-xl border-2 border-sky-200 space-y-3">
-                        <div class="flex items-center gap-3">
-                            <span class="w-7 h-7 rounded-full bg-egar-600 text-white flex items-center justify-center font-bold shrink-0">✔</span>
-                            <span class="font-display font-extrabold italic text-base sm:text-lg">Sledujte naše ceny</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="w-7 h-7 rounded-full bg-egar-600 text-white flex items-center justify-center font-bold shrink-0">✔</span>
-                            <span class="font-display font-extrabold italic text-base sm:text-lg">Dejte nám To se mi líbí</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="w-7 h-7 rounded-full bg-egar-600 text-white flex items-center justify-center font-bold shrink-0">✔</span>
-                            <span class="font-display font-extrabold italic text-base sm:text-lg">Sdílejte naši stránku</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="w-7 h-7 rounded-full bg-egar-600 text-white flex items-center justify-center font-bold shrink-0">✔</span>
-                            <span class="font-display font-extrabold italic text-base sm:text-lg">Buďte s námi! 💙</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- =====================================================================
-         7. SEKCE KONTAKT A MAPA (#kontakt)
-    ====================================================================== -->
-    <section id="kontakt" class="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-24">
-        <div class="text-center max-w-3xl mx-auto mb-12">
-            <span class="inline-block px-3.5 py-1 rounded-full bg-egar-100 text-egar-700 font-display font-extrabold text-xs uppercase tracking-wider mb-3">
-                📍 Málkov 73, u Chomutova
-            </span>
-            <h2 class="text-3xl sm:text-4xl font-display font-black text-egar-950 tracking-tight">
-                Kde nás najdete – Kontakt a mapa
-            </h2>
-            <p class="mt-2 text-slate-600">
-                Zastavte se u nás v Málkově 73 u Chomutova. Máme otevřeno každý den od 7:00 do 19:00.
-            </p>
+          <p class="text-center text-xs text-sky-200 font-medium mt-4">
+            Děkujeme za pochopení a těšíme se na vaši návštěvu! 💙
+          </p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-            <div class="lg:col-span-5 bg-white rounded-3xl p-7 shadow-lg border border-blue-100 flex flex-col justify-between space-y-6">
-                <div class="space-y-6">
-                    <div class="flex items-center justify-between p-4 rounded-2xl bg-egar-50 border border-egar-200">
-                        <div>
-                            <div class="text-xs font-extrabold uppercase text-egar-700">Otevírací doba (Po–Ne)</div>
-                            <div id="contact-hours-big" class="text-xl font-display font-black text-egar-950 mt-0.5">Denně 7:00 – 19:00</div>
-                            <div class="text-xs text-slate-600 font-medium">Otevřeno každý den včetně víkendů</div>
-                        </div>
-                        <div id="contact-live-status" class="px-3 py-1.5 rounded-xl text-xs font-extrabold uppercase bg-emerald-600 text-white shadow">
-                            Otevřeno
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-2xl bg-egar-600 text-white flex items-center justify-center shrink-0 shadow">
-                            📍
-                        </div>
-                        <div>
-                            <div class="text-xs font-bold uppercase text-slate-400">Adresa čerpací stanice</div>
-                            <div id="contact-address" class="text-lg font-display font-black text-egar-950">Málkov 73, 430 01 Málkov (u Chomutova)</div>
-                            <div class="text-xs text-egar-700 font-semibold mt-1">U tahu I/13 (Chomutov – Kadaň / Klášterec n. O.)</div>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-2xl bg-egar-600 text-white flex items-center justify-center shrink-0 shadow">
-                            📞
-                        </div>
-                        <div>
-                            <div class="text-xs font-bold uppercase text-slate-400">Telefon na obsluhu</div>
-                            <a id="contact-phone-link" href="tel:+420735226109" class="text-2xl font-display font-black text-egar-700 hover:text-egar-900 hover:underline tracking-tight block">
-                                735 226 109
-                            </a>
-                            <div class="text-xs text-slate-500 font-medium">Volejte denně 7:00 – 19:00</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pt-5 border-t border-slate-100 space-y-2.5">
-                    <div class="text-xs font-extrabold uppercase text-slate-400">Spustit navigaci:</div>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                        <a href="https://www.google.com/maps/search/?api=1&query=EGAR-CS+M%C3%A1lkov+73+Chomutov" target="_blank" rel="noopener noreferrer"
-                           class="inline-flex items-center justify-center gap-1.5 px-3 py-3 rounded-xl bg-egar-600 hover:bg-egar-700 text-white font-display font-bold text-xs shadow transition whitespace-nowrap">
-                            <span>📍 Google Maps</span>
-                        </a>
-                        <a href="https://mapy.cz/zakladni?q=M%C3%A1lkov%2073%20EGAR-CS" target="_blank" rel="noopener noreferrer"
-                           class="inline-flex items-center justify-center gap-1.5 px-3 py-3 rounded-xl bg-egar-50 hover:bg-egar-100 text-egar-900 border border-egar-200 font-display font-bold text-xs transition whitespace-nowrap">
-                            <span>🗺️ Mapy.cz</span>
-                        </a>
-                        <a href="https://waze.com/ul?q=M%C3%A1lkov%2073%20Chomutov&navigate=yes" target="_blank" rel="noopener noreferrer"
-                           class="inline-flex items-center justify-center gap-1.5 px-3 py-3 rounded-xl bg-sky-50 hover:bg-sky-100 text-sky-900 border border-sky-200 font-display font-bold text-xs transition whitespace-nowrap">
-                            <span>🚗 Waze</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lg:col-span-7 bg-white rounded-3xl p-3 shadow-lg border border-blue-100 min-h-[380px] flex flex-col">
-                <div class="relative w-full h-full min-h-[360px] rounded-2xl overflow-hidden bg-slate-100 flex-1">
-                    <iframe 
-                        title="Mapa Čerpací stanice EGAR-CS Málkov 73 u Chomutova"
-                        src="https://www.google.com/maps?q=EGAR-CS+M%C3%A1lkov+73,+430+01+M%C3%A1lkov&output=embed"
-                        class="w-full h-full border-0 min-h-[360px]"
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- =====================================================================
-         8. PATIČKA WEBU (FOOTER)
-    ====================================================================== -->
-    <footer class="bg-[#061a40] text-blue-100 border-t border-white/15 pt-12 pb-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-8 border-b border-white/10">
-                <div>
-                    <div class="flex items-baseline font-display font-black italic text-2xl tracking-tight">
-                        <span class="text-white">EGAR</span><span class="text-[#ff2a4b]">-CS</span>
-                        <span class="ml-2.5 text-sm font-bold not-italic text-sky-300">MÁLKOV 73 u Chomutova</span>
-                    </div>
-                    <p class="font-hand text-2xl text-sky-200 mt-1">
-                        Děkujeme, že tankujete právě u nás! Těšíme se na vás! 💙
-                    </p>
-                </div>
-
-                <div class="flex flex-wrap items-center gap-5 text-sm font-display font-bold">
-                    <a href="#cenik" class="hover:text-sky-300 transition whitespace-nowrap">Ceník paliv</a>
-                    <a href="#karty" class="hover:text-sky-300 transition whitespace-nowrap">Platební karty</a>
-                    <a href="#kalkulacka" class="hover:text-sky-300 transition whitespace-nowrap">Kalkulačka</a>
-                    <a href="#sluzby" class="hover:text-sky-300 transition whitespace-nowrap">Služby</a>
-                    <a href="#kontakt" class="hover:text-sky-300 transition whitespace-nowrap">Kontakt a mapa</a>
-                    <a href="tel:+420735226109" class="text-sky-300 hover:text-white transition whitespace-nowrap">📞 735 226 109</a>
-                </div>
-            </div>
-
-            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-blue-300/70">
-                <p>© <span id="footer-year">2026</span> Čerpací stanice EGAR-CS – Málkov 73, 430 01 Málkov u Chomutova. Otevřeno denně 7:00–19:00.</p>
-                <button id="footer-admin-btn" type="button" class="hover:text-white underline font-semibold transition">
-                    ⚙️ Upravit ceny a stáhnout index.html pro GitHub / Webhosting
-                </button>
-            </div>
-        </div>
-    </footer>
-
-    <!-- =====================================================================
-         9. MODÁLNÍ OKNO: RYCHLÁ ÚPRAVA CEN A STAŽENÍ INDEX.HTML PRO GITHUB
-    ====================================================================== -->
-    <div id="admin-modal" class="fixed inset-0 z-50 hidden bg-[#061a40]/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-        <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-blue-100 my-8">
-            <div class="flex items-center justify-between pb-4 border-b border-slate-100">
-                <div>
-                    <span class="text-xs font-display font-extrabold uppercase tracking-wider text-egar-600">Správa ceníku a export pro GitHub Pages</span>
-                    <h3 class="text-xl font-display font-black text-egar-950">Upravit ceny a stáhnout index.html</h3>
-                </div>
-                <button id="close-admin-btn" type="button" class="p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100">
-                    ✕
-                </button>
-            </div>
-
-            <form id="admin-form" class="space-y-5 mt-5">
-                <div>
-                    <h4 class="text-xs font-display font-extrabold uppercase tracking-wider text-slate-500 mb-3">Aktuální ceny paliv (Kč/l)</h4>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="admin-fuels-inputs"></div>
-                </div>
-
-                <div>
-                    <label for="inp-font-theme" class="block text-xs font-display font-extrabold uppercase tracking-wider text-slate-500 mb-1.5">Styl písma webu</label>
-                    <select id="inp-font-theme" class="w-full rounded-xl border border-slate-200 px-3 py-2.5 text-sm font-display font-bold text-egar-950 bg-slate-50">
-                        <option value="exo">1. Exo 2 Moderní (Exo 2 + Plus Jakarta Sans)</option>
-                        <option value="flyer">2. Leták &amp; Totem (Montserrat + Barlow Condensed)</option>
-                        <option value="sport">3. Kanit Sport (Kanit + Outfit)</option>
-                    </select>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">Telefon na stanici</label>
-                        <input id="inp-phone" type="text" class="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm font-bold">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">Otevírací doba</label>
-                        <input id="inp-hours" type="text" class="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm font-bold">
-                    </div>
-                </div>
-
-                <div id="admin-status-msg" class="hidden text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl p-3"></div>
-
-                <div class="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
-                    <button type="submit" class="px-5 py-2.5 rounded-xl bg-egar-600 hover:bg-egar-700 text-white font-display font-bold text-sm shadow transition">
-                        Uložit změny na stránce
-                    </button>
-                    <button id="download-html-btn" type="button" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#061a40] hover:bg-egar-800 text-white font-display font-bold text-sm shadow transition">
-                        <span>⬇ Stáhnout hotový index.html</span>
-                    </button>
-                </div>
-            </form>
-        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- =====================================================================
-         JAVASCRIPT LOGIKA
-    ====================================================================== -->
-    <script>
-        (function () {
-            const cfg = window.EGAR_CONFIG;
+  <!-- JEDNODUCHÁ A PŘEHLEDNÁ KALKULAČKA TANKOVÁNÍ (KROK PO 5 LITRECH) -->
+  <section id="kalkulacka" class="py-12 sm:py-16 bg-slate-100 border-b border-slate-200">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-3xl shadow-xl border border-slate-200/90 p-6 sm:p-8">
 
-            function parsePriceCz(priceStr) {
-                return parseFloat(String(priceStr).replace(',', '.').trim()) || 0;
-            }
+        <!-- Nadpis kalkulačky -->
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-6">
+          <div>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-[#004aad] font-heading font-extrabold text-xs uppercase tracking-wider">
+              ⛽ RYCHLÝ VÝPOČET TANKOVÁNÍ • PO 5 LITRECH
+            </span>
+            <h2 class="font-heading text-2xl sm:text-3xl font-black text-[#061a40] mt-2">
+              Kalkulačka ceny paliva
+            </h2>
+          </div>
+          <span class="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1.5 rounded-xl">
+            EGAR-CS Málkov 73
+          </span>
+        </div>
 
-            function formatPriceCz(num) {
-                return num.toFixed(2).replace('.', ',');
-            }
+        <!-- 1. Výběr paliva -->
+        <div class="mb-6">
+          <label class="block font-heading font-extrabold text-xs uppercase tracking-wider text-slate-500 mb-2.5">
+            1. Vyberte palivo:
+          </label>
+          <div class="grid grid-cols-3 gap-2.5 sm:gap-3">
+            <button type="button" data-fuel="diesel" data-price="44.90" data-name="DIESEL" class="fuel-btn active-fuel rounded-2xl p-3 sm:p-4 border-2 border-[#004aad] bg-[#004aad] text-white text-center transition shadow-md">
+              <span class="font-heading font-black text-sm sm:text-base block uppercase">DIESEL</span>
+              <span class="text-xs sm:text-sm font-bold opacity-90 block mt-0.5">44,90 Kč/l</span>
+            </button>
 
-            function applyFontTheme(themeName) {
-                const validTheme = ['exo', 'flyer', 'sport'].includes(themeName) ? themeName : 'exo';
-                cfg.fontTheme = validTheme;
-                document.body.setAttribute('data-font-theme', validTheme);
+            <button type="button" data-fuel="natural95" data-price="38.90" data-name="NATURAL 95" class="fuel-btn rounded-2xl p-3 sm:p-4 border-2 border-slate-200 bg-slate-50 hover:bg-blue-50/50 text-slate-800 text-center transition">
+              <span class="font-heading font-black text-sm sm:text-base block uppercase">NATURAL 95</span>
+              <span class="text-xs sm:text-sm font-bold text-slate-600 block mt-0.5">38,90 Kč/l</span>
+            </button>
 
-                document.querySelectorAll('.font-switch-btn').forEach(btn => {
-                    const isActive = btn.getAttribute('data-set-font') === validTheme;
-                    if (btn.closest('#mobile-menu')) {
-                        btn.className = isActive
-                            ? 'font-switch-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-egar-600 text-white'
-                            : 'font-switch-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-700';
-                    } else {
-                        btn.className = isActive
-                            ? 'font-switch-btn px-2 py-0.5 rounded-full font-bold transition bg-sky-400 text-egar-950'
-                            : 'font-switch-btn px-2 py-0.5 rounded-full font-bold transition text-blue-100 hover:text-white';
-                    }
-                });
+            <button type="button" data-fuel="adblue" data-price="16.90" data-name="AdBlue" class="fuel-btn rounded-2xl p-3 sm:p-4 border-2 border-slate-200 bg-slate-50 hover:bg-blue-50/50 text-slate-800 text-center transition">
+              <span class="font-heading font-black text-sm sm:text-base block">AdBlue</span>
+              <span class="text-xs sm:text-sm font-bold text-slate-600 block mt-0.5">16,90 Kč/l</span>
+            </button>
+          </div>
+        </div>
 
-                const selectEl = document.getElementById('inp-font-theme');
-                if (selectEl) selectEl.value = validTheme;
-            }
+        <!-- 2. Posuvník litrů (po 5 l) -->
+        <div class="mb-6 bg-slate-50 rounded-2xl p-4 sm:p-5 border border-slate-200/80">
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <span class="font-heading font-extrabold text-xs uppercase tracking-wider text-slate-600">
+              2. Množství paliva (krok 5 l):
+            </span>
 
-            document.querySelectorAll('.font-switch-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    applyFontTheme(btn.getAttribute('data-set-font'));
-                });
-            });
+            <div class="flex items-center gap-2">
+              <button type="button" id="btn-minus-5" class="px-3 py-1.5 rounded-xl bg-white border border-slate-300 hover:border-[#004aad] text-[#061a40] font-heading font-black text-sm shadow-sm active:scale-95 transition">
+                − 5 l
+              </button>
+              <span id="calc-liters-display" class="font-heading font-black text-2xl sm:text-3xl text-[#004aad] min-w-[76px] text-center">
+                50 l
+              </span>
+              <button type="button" id="btn-plus-5" class="px-3 py-1.5 rounded-xl bg-white border border-slate-300 hover:border-[#004aad] text-[#061a40] font-heading font-black text-sm shadow-sm active:scale-95 transition">
+                + 5 l
+              </button>
+            </div>
+          </div>
 
-            function renderSite() {
-                applyFontTheme(cfg.fontTheme || 'exo');
+          <!-- Range input po 5 litrech -->
+          <input id="fuel-range" type="range" min="5" max="100" step="5" value="50" class="fuel-slider" aria-label="Množství paliva v litrech" />
 
-                const totemContainer = document.getElementById('totem-fuel-rows');
-                const calcSelect = document.getElementById('calc-fuel');
-                const prevSelectedIdx = calcSelect.selectedIndex >= 0 ? calcSelect.selectedIndex : 0;
+          <div class="flex justify-between text-[11px] font-bold text-slate-400 mt-2 px-0.5">
+            <span>5 l</span>
+            <span>25 l</span>
+            <span>50 l</span>
+            <span>75 l</span>
+            <span>100 l</span>
+          </div>
 
-                totemContainer.innerHTML = '';
-                calcSelect.innerHTML = '';
+          <!-- 4 rychlé předvolby -->
+          <div class="grid grid-cols-4 gap-2 mt-4 pt-3 border-t border-slate-200/80">
+            <button type="button" data-preset="20" class="preset-btn py-2 rounded-xl text-xs font-heading font-extrabold border border-slate-200 bg-white text-slate-700 hover:border-[#004aad] transition">20 l</button>
+            <button type="button" data-preset="40" class="preset-btn py-2 rounded-xl text-xs font-heading font-extrabold border border-slate-200 bg-white text-slate-700 hover:border-[#004aad] transition">40 l</button>
+            <button type="button" data-preset="60" class="preset-btn py-2 rounded-xl text-xs font-heading font-extrabold border border-slate-200 bg-white text-slate-700 hover:border-[#004aad] transition">60 l</button>
+            <button type="button" data-preset="80" class="preset-btn py-2 rounded-xl text-xs font-heading font-extrabold border border-slate-200 bg-white text-slate-700 hover:border-[#004aad] transition">80 l</button>
+          </div>
+        </div>
 
-                cfg.fuels.forEach((fuel, index) => {
-                    if (!fuel.active) return;
+        <!-- 3. Výsledná cena -->
+        <div class="rounded-2xl bg-gradient-to-r from-[#061a40] via-[#0a2463] to-[#004aad] text-white p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg">
+          <div class="text-center sm:text-left">
+            <span class="text-xs font-bold uppercase tracking-wider text-sky-300 block">
+              Celková orientační cena
+            </span>
+            <span id="calc-summary-formula" class="text-sm text-blue-100 font-medium mt-0.5 block">
+              DIESEL • 50 l × 44,90 Kč/l
+            </span>
+          </div>
+          <div class="text-center sm:text-right">
+            <span id="calc-total-price" class="totem-num text-4xl sm:text-5xl font-black text-white tracking-tight">
+              2 245 Kč
+            </span>
+          </div>
+        </div>
 
-                    let badgeClass = 'badge-diesel';
-                    let iconHtml = `
-                        <svg class="w-7 h-7 text-white mb-0.5 shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
-                        </svg>
-                    `;
+      </div>
+    </div>
+  </section>
 
-                    if (fuel.styleType === 'natural') {
-                        badgeClass = 'badge-natural';
-                        iconHtml = `
-                            <div class="w-8 h-8 rounded-full bg-white text-emerald-900 font-display font-black text-base flex items-center justify-center mb-0.5 shadow shrink-0">
-                                95
-                            </div>
-                        `;
-                    } else if (fuel.styleType === 'adblue') {
-                        badgeClass = 'badge-adblue';
-                    }
+  <!-- SLUŽBY A VÝHODY -->
+  <section id="sluzby" class="py-14 sm:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-50 text-[#004aad] font-heading font-extrabold text-xs uppercase tracking-wider">
+          ⭐ SLUŽBY A VÝHODY • EGAR-CS MÁLKOV 73
+        </span>
+        <h2 class="font-heading text-3xl sm:text-4xl font-black text-[#061a40] mt-3">
+          Proč tankovat právě u nás v Málkově?
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base mt-2">
+          Zakládáme si na férových cenách paliv, rychlé obsluze a příjemném prostředí pro řidiče osobních aut, dodávek i nákladních vozů.
+        </p>
+      </div>
 
-                    const priceTextColor = fuel.styleType === 'natural'
-                        ? 'text-emerald-800'
-                        : (fuel.styleType === 'adblue' ? 'text-egar-600' : 'text-slate-950');
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Karta 1 -->
+        <div class="rounded-2xl p-6 bg-slate-50 border border-slate-200/80 hover:border-blue-300 hover:shadow-lg transition">
+          <div class="w-12 h-12 rounded-2xl bg-[#004aad] text-white flex items-center justify-center mb-4 shadow-md shadow-blue-900/15">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-extrabold text-[#061a40]">Výhodné ceny paliv</h3>
+          <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+            Držíme dlouhodobě skvělé ceny pro Motorovou naftu (Diesel), Natural 95 i čepované AdBlue, aby se vám každé tankování vyplatilo.
+          </p>
+        </div>
 
-                    const borderColor = fuel.styleType === 'natural'
-                        ? 'border-emerald-700/35'
-                        : (fuel.styleType === 'adblue' ? 'border-egar-500/35' : 'border-slate-800/35');
+        <!-- Karta 2 -->
+        <div class="rounded-2xl p-6 bg-slate-50 border border-slate-200/80 hover:border-blue-300 hover:shadow-lg transition">
+          <div class="w-12 h-12 rounded-2xl bg-[#004aad] text-white flex items-center justify-center mb-4 shadow-md shadow-blue-900/15">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-extrabold text-[#061a40]">Ověřená kvalita paliv</h3>
+          <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+            Dodáváme certifikovaná paliva a čisté AdBlue, která spolehlivě chrání motor vašeho vozu v letním i zimním provozu.
+          </p>
+        </div>
 
-                    const row = document.createElement('div');
-                    row.className = `fuel-pill-row rounded-2xl border-2 ${borderColor} overflow-hidden flex items-stretch h-20 sm:h-24`;
-                    row.innerHTML = `
-                        <div class="${badgeClass} w-36 sm:w-48 px-4 flex flex-col items-center justify-center text-white shrink-0">
-                            ${iconHtml}
-                            <span class="font-display font-black uppercase tracking-wide text-sm sm:text-lg leading-none text-center whitespace-nowrap">
-                                ${fuel.name}
-                            </span>
-                        </div>
-                        <div class="flex-1 px-4 sm:px-6 flex items-center justify-between gap-2">
-                            <span class="hidden sm:inline-block text-xs font-bold uppercase tracking-wider text-slate-400">
-                                ${fuel.sub || ''}
-                            </span>
-                            <div class="flex items-baseline justify-end gap-1.5 ml-auto whitespace-nowrap">
-                                <span class="font-totem font-black text-3xl sm:text-5xl tracking-tight tabular-nums ${priceTextColor}">
-                                    ${fuel.price}
-                                </span>
-                                <span class="font-display font-extrabold text-sm sm:text-xl text-slate-700">
-                                    Kč/l
-                                </span>
-                            </div>
-                        </div>
-                    `;
-                    totemContainer.appendChild(row);
+        <!-- Karta 3 -->
+        <div class="rounded-2xl p-6 bg-slate-50 border border-slate-200/80 hover:border-blue-300 hover:shadow-lg transition">
+          <div class="w-12 h-12 rounded-2xl bg-[#004aad] text-white flex items-center justify-center mb-4 shadow-md shadow-blue-900/15">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-extrabold text-[#061a40]">Rychlá obsluha bez čekání</h3>
+          <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+            Pohodlný příjezd pro osobní i nákladní vozidla, přehledné stojany a vstřícná obsluha každý den od 7:00 do 19:00.
+          </p>
+        </div>
 
-                    const numericPrice = parsePriceCz(fuel.price);
-                    const opt = document.createElement('option');
-                    opt.value = numericPrice;
-                    opt.setAttribute('data-fuel-name', fuel.name);
-                    opt.setAttribute('data-fuel-price-str', fuel.price);
-                    opt.textContent = `${fuel.name} (${fuel.price} Kč/l)`;
-                    if (index === prevSelectedIdx) opt.selected = true;
-                    calcSelect.appendChild(opt);
-                });
+        <!-- Karta 4 -->
+        <div class="rounded-2xl p-6 bg-slate-50 border border-slate-200/80 hover:border-blue-300 hover:shadow-lg transition">
+          <div class="w-12 h-12 rounded-2xl bg-[#004aad] text-white flex items-center justify-center mb-4 shadow-md shadow-blue-900/15">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zm4-4h8"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-extrabold text-[#061a40]">Káva a občerstvení</h3>
+          <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+            Zastavte se u nás na čerstvou kávu, chlazené nápoje, drobné občerstvení a autokosmetiku či provozní kapaliny na cestu.
+          </p>
+        </div>
 
-                renderCalcFuelCards();
+        <!-- Karta 5 -->
+        <div class="rounded-2xl p-6 bg-slate-50 border border-slate-200/80 hover:border-blue-300 hover:shadow-lg transition">
+          <div class="w-12 h-12 rounded-2xl bg-[#004aad] text-white flex items-center justify-center mb-4 shadow-md shadow-blue-900/15">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <rect x="2" y="5" width="20" height="14" rx="2"/>
+              <line x1="2" y1="10" x2="22" y2="10"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-extrabold text-[#061a40]">Pohodlná platba kartou</h3>
+          <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+            Zaplatíte hotově i kartami VISA, VISA Electron, MasterCard, Maestro a Diners Club (upozornění: karty CCS a DKV nepřijímáme).
+          </p>
+        </div>
 
-                const cleanPhone = '+420' + cfg.contact.phone.replace(/\s+/g, '');
-                document.getElementById('top-phone-text').textContent = cfg.contact.phone;
-                document.getElementById('top-phone-link').href = 'tel:' + cleanPhone;
-                document.getElementById('nav-phone-btn').href = 'tel:' + cleanPhone;
-                document.getElementById('nav-phone-btn').querySelector('span').textContent = cfg.contact.phone;
-                document.getElementById('contact-phone-link').textContent = cfg.contact.phone;
-                document.getElementById('contact-phone-link').href = 'tel:' + cleanPhone;
+        <!-- Karta 6 -->
+        <div class="rounded-2xl p-6 bg-slate-50 border border-slate-200/80 hover:border-blue-300 hover:shadow-lg transition">
+          <div class="w-12 h-12 rounded-2xl bg-[#004aad] text-white flex items-center justify-center mb-4 shadow-md shadow-blue-900/15">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-extrabold text-[#061a40]">Skvělá dostupnost u Chomutova</h3>
+          <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+            Najdete nás přímo v obci Málkov 73 u hlavního tahu I/13 mezi Chomutovem a Kláštercem nad Ohří / Karlovými Vary.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                document.getElementById('top-hours-label').textContent = cfg.contact.hoursText;
-                document.getElementById('contact-hours-big').textContent = cfg.contact.hoursText;
+  <!-- FACEBOOK BANNER (PODLE LETÁKU) -->
+  <section id="facebook" class="py-12 sm:py-16 bg-gradient-to-r from-[#061a40] via-[#004aad] to-[#0a2463] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 p-6 sm:p-10 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-6">
+          <div class="w-20 h-20 rounded-full bg-[#1877F2] text-white flex items-center justify-center shrink-0 shadow-xl border-4 border-white">
+            <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </div>
+          <div>
+            <span class="inline-block px-3 py-1 rounded-full bg-yellow-400 text-slate-950 font-heading font-black text-xs uppercase tracking-wider mb-2">
+              Sledujte nás, buďte s námi v kontaktu! ❤️
+            </span>
+            <h2 class="font-heading text-2xl sm:text-4xl font-black tracking-tight">
+              Staňte se našimi přáteli na Facebooku!
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 mt-4 text-xs sm:text-sm font-bold text-sky-100">
+              <span class="inline-flex items-center justify-center sm:justify-start gap-1.5">✔ Sledujte naše ceny</span>
+              <span class="inline-flex items-center justify-center sm:justify-start gap-1.5">✔ Dejte nám To se mi líbí</span>
+              <span class="inline-flex items-center justify-center sm:justify-start gap-1.5">✔ Sdílejte naši stránku</span>
+              <span class="inline-flex items-center justify-center sm:justify-start gap-1.5">✔ Buďte s námi! 💙</span>
+            </div>
+          </div>
+        </div>
 
-                updateCalculator();
-                updateLiveOpenStatus();
-            }
+        <a href="https://www.facebook.com/share/19iVn2WqEs/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-7 py-4 rounded-2xl bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-heading font-black text-base sm:text-lg shadow-xl transition shrink-0 whitespace-nowrap">
+          <span>Otevřít náš Facebook</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
 
-            function updateLiveOpenStatus() {
-                const now = new Date();
-                const hour = now.getHours();
-                const isOpen = hour >= cfg.contact.openHour && hour < cfg.contact.closeHour;
+  <!-- KONTAKT A MAPA -->
+  <section id="kontakt" class="py-14 sm:py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
 
-                const topBadge = document.getElementById('live-open-badge');
-                const contactBadge = document.getElementById('contact-live-status');
+        <!-- Kontaktní údaje -->
+        <div class="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 shadow-lg border border-slate-200/80 flex flex-col justify-between">
+          <div>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-[#004aad] font-heading font-extrabold text-xs uppercase tracking-wider">
+              📍 KONTAKT A NAVIGACE
+            </span>
+            <h2 class="font-heading text-3xl font-black text-[#061a40] mt-2">
+              Kde nás najdete
+            </h2>
+            <p class="text-slate-600 text-sm mt-1">
+              Zastavte se u nás v Málkově u Chomutova. Těšíme se na vaši návštěvu!
+            </p>
 
-                if (isOpen) {
-                    topBadge.className = 'inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-extrabold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 whitespace-nowrap';
-                    topBadge.textContent = '🟢 PRÁVĚ OTEVŘENO (7:00–19:00)';
-                    contactBadge.className = 'px-3.5 py-1.5 rounded-xl text-xs font-extrabold uppercase bg-emerald-600 text-white shadow';
-                    contactBadge.textContent = 'Právě otevřeno';
-                } else {
-                    topBadge.className = 'inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-extrabold uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-400/30 whitespace-nowrap';
-                    topBadge.textContent = '🟡 OTEVÍRÁME V 7:00';
-                    contactBadge.className = 'px-3.5 py-1.5 rounded-xl text-xs font-extrabold uppercase bg-slate-700 text-white shadow';
-                    contactBadge.textContent = 'Otevíráme v 7:00';
-                }
-            }
+            <div class="space-y-4 mt-6">
+              <!-- Adresa -->
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200/70">
+                <div class="w-10 h-10 rounded-xl bg-[#004aad] text-white flex items-center justify-center shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block">Adresa čerpací stanice</span>
+                  <span class="font-heading font-extrabold text-lg text-[#061a40] block">EGAR-CS Málkov 73</span>
+                  <span class="text-sm text-slate-600">430 01 Málkov (u Chomutova)</span>
+                </div>
+              </div>
 
-            // Zjednodušená kalkulačka tankování po 5 litrech
-            const calcFuelEl = document.getElementById('calc-fuel');
-            const calcFuelCardsEl = document.getElementById('calc-fuel-cards');
-            const calcLitersEl = document.getElementById('calc-liters');
-            const calcLitersValEl = document.getElementById('calc-liters-val');
-            const calcMinus5Btn = document.getElementById('calc-minus-5');
-            const calcPlus5Btn = document.getElementById('calc-plus-5');
-            const calcTotalEl = document.getElementById('calc-total');
-            const calcUnitInfoEl = document.getElementById('calc-unit-info');
-            const calcSummaryBadge = document.getElementById('calc-summary-badge');
+              <!-- Otevírací doba -->
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200/70">
+                <div class="w-10 h-10 rounded-xl bg-[#004aad] text-white flex items-center justify-center shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 3"/>
+                  </svg>
+                </div>
+                <div>
+                  <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block">Otevírací doba</span>
+                  <span class="font-heading font-extrabold text-lg text-[#061a40] block">Denně: 7:00 – 19:00</span>
+                  <span class="text-sm text-slate-600">Pondělí až neděle včetně svátků</span>
+                </div>
+              </div>
 
-            function renderCalcFuelCards() {
-                if (!calcFuelCardsEl) return;
-                calcFuelCardsEl.innerHTML = '';
-                Array.from(calcFuelEl.options).forEach((opt, idx) => {
-                    const isSelected = calcFuelEl.selectedIndex === idx;
-                    const fuelName = opt.getAttribute('data-fuel-name') || opt.textContent;
-                    const fuelPriceStr = opt.getAttribute('data-fuel-price-str') || '';
-                    const btn = document.createElement('button');
-                    btn.type = 'button';
-                    btn.className = isSelected
-                        ? 'p-3 rounded-2xl border-2 border-egar-600 bg-egar-600 text-white text-center shadow-md transition'
-                        : 'p-3 rounded-2xl border border-slate-200 bg-slate-50 hover:border-egar-400 text-egar-950 text-center transition';
-                    btn.innerHTML = `
-                        <div class="font-display font-black text-xs sm:text-base uppercase leading-tight whitespace-nowrap">${fuelName}</div>
-                        <div class="text-xs font-bold ${isSelected ? 'text-sky-200' : 'text-slate-500'} mt-0.5">${fuelPriceStr} Kč/l</div>
-                    `;
-                    btn.addEventListener('click', () => {
-                        calcFuelEl.selectedIndex = idx;
-                        renderCalcFuelCards();
-                        updateCalculator();
-                    });
-                    calcFuelCardsEl.appendChild(btn);
-                });
-            }
+              <!-- Telefon -->
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200/70">
+                <div class="w-10 h-10 rounded-xl bg-[#004aad] text-white flex items-center justify-center shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                  </svg>
+                </div>
+                <div>
+                  <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block">Telefon na stanici</span>
+                  <a href="tel:+420735226109" class="font-heading font-black text-xl text-[#004aad] hover:underline block">
+                    +420 735 226 109
+                  </a>
+                  <span class="text-xs text-slate-500">Kliknutím zavoláte přímo obsluze</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
-            function snapToFiveLiters(val) {
-                const min = parseInt(calcLitersEl.min || 5, 10);
-                const max = parseInt(calcLitersEl.max || 100, 10);
-                const stepped = Math.round(val / 5) * 5;
-                return Math.max(min, Math.min(max, stepped));
-            }
+          <!-- Tlačítka navigací -->
+          <div class="mt-6 pt-5 border-t border-slate-200">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-slate-400 block mb-3">
+              Spustit navigaci jedním kliknutím:
+            </span>
+            <div class="grid grid-cols-3 gap-2.5">
+              <a href="https://www.google.com/maps/search/?api=1&query=EGAR-CS+M%C3%A1lkov+73" target="_blank" rel="noopener noreferrer" class="py-2.5 px-3 rounded-xl bg-[#004aad] hover:bg-[#003b8a] text-white font-heading font-extrabold text-xs text-center transition shadow-sm">
+                Google Maps
+              </a>
+              <a href="https://mapy.cz/zakladni?q=M%C3%A1lkov%2073" target="_blank" rel="noopener noreferrer" class="py-2.5 px-3 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-heading font-extrabold text-xs text-center transition shadow-sm">
+                Mapy.cz
+              </a>
+              <a href="https://waze.com/ul?q=M%C3%A1lkov%2073" target="_blank" rel="noopener noreferrer" class="py-2.5 px-3 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-heading font-extrabold text-xs text-center transition shadow-sm">
+                Waze
+              </a>
+            </div>
+          </div>
+        </div>
 
-            function highlightActivePresetButton(liters) {
-                document.querySelectorAll('.preset-liters-btn').forEach(btn => {
-                    const btnLiters = parseInt(btn.getAttribute('data-liters'), 10);
-                    if (btnLiters === liters) {
-                        btn.className = 'preset-liters-btn px-3.5 py-1.5 rounded-xl text-xs font-display font-extrabold bg-egar-600 border border-egar-600 text-white shadow-sm transition';
-                    } else {
-                        btn.className = 'preset-liters-btn px-3.5 py-1.5 rounded-xl text-xs font-display font-extrabold bg-white border border-slate-200 text-slate-700 hover:border-egar-500 transition';
-                    }
-                });
-            }
+        <!-- Interaktivní mapa -->
+        <div class="lg:col-span-7 rounded-3xl overflow-hidden shadow-lg border border-slate-200 bg-white min-h-[380px] flex flex-col">
+          <iframe
+            title="Mapa Čerpací stanice EGAR-CS Málkov 73"
+            src="https://www.google.com/maps?q=M%C3%A1lkov+73,+430+01+M%C3%A1lkov&output=embed"
+            class="w-full flex-1 min-h-[380px] border-0"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
 
-            function updateCalculator() {
-                const selectedOpt = calcFuelEl.options[calcFuelEl.selectedIndex];
-                const price = parseFloat(calcFuelEl.value || 0);
-                const fuelName = selectedOpt ? (selectedOpt.getAttribute('data-fuel-name') || 'PALIVO') : 'PALIVO';
+      </div>
+    </div>
+  </section>
 
-                const rawLiters = parseInt(calcLitersEl.value || 50, 10);
-                const liters = snapToFiveLiters(rawLiters);
-                if (rawLiters !== liters) {
-                    calcLitersEl.value = liters;
-                }
+  <!-- PATIČKA WEBU -->
+  <footer class="bg-[#061a40] text-blue-100 border-t border-blue-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-blue-900/80">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-[#004aad] flex items-center justify-center text-white font-heading font-black">
+            ⛽
+          </div>
+          <div>
+            <div class="font-heading text-xl font-black italic tracking-tight text-white leading-none">
+              <span>EGAR</span><span class="text-[#ff3b5c]">-CS</span>
+              <span class="text-sm font-bold not-italic text-sky-300 ml-1">Málkov 73</span>
+            </div>
+            <p class="text-xs text-blue-300 mt-1">
+              Děkujeme, že tankujete právě u nás! Těšíme se na vaši návštěvu. 💙
+            </p>
+          </div>
+        </div>
 
-                calcLitersValEl.textContent = liters + ' l';
+        <div class="flex flex-wrap items-center justify-center gap-4 text-xs sm:text-sm font-bold">
+          <a href="#cenik" class="hover:text-white transition">Ceník paliv</a>
+          <span class="text-blue-800">•</span>
+          <a href="#platby" class="hover:text-white transition">Platební karty</a>
+          <span class="text-blue-800">•</span>
+          <a href="#kalkulacka" class="hover:text-white transition">Kalkulačka</a>
+          <span class="text-blue-800">•</span>
+          <a href="#kontakt" class="hover:text-white transition">Kontakt</a>
+          <span class="text-blue-800">•</span>
+          <a href="https://www.facebook.com/share/19iVn2WqEs/" target="_blank" rel="noopener noreferrer" class="text-sky-300 hover:text-white transition">Facebook</a>
+        </div>
+      </div>
 
-                const total = Math.round(price * liters);
-                calcTotalEl.textContent = total.toLocaleString('cs-CZ') + ' Kč';
-                calcUnitInfoEl.textContent = `${liters} l × ${formatPriceCz(price)} Kč/l vč. DPH`;
-                calcSummaryBadge.textContent = `${fuelName} • ${liters} litrů`;
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-blue-300/80">
+        <p>© <span id="current-year">2026</span> Čerpací stanice EGAR-CS Málkov 73 u Chomutova. Všechna práva vyhrazena.</p>
+        <p>Otevřeno denně 7:00 – 19:00 • Tel.: <a href="tel:+420735226109" class="text-white font-bold hover:underline">735 226 109</a></p>
+      </div>
+    </div>
+  </footer>
 
-                highlightActivePresetButton(liters);
-            }
+  <!-- JAVASCRIPT PRO FUNKČNOST STRÁNKY -->
+  <script>
+    // 1. Mobilní menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
-            calcLitersEl.addEventListener('input', updateCalculator);
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
 
-            calcMinus5Btn.addEventListener('click', () => {
-                const current = parseInt(calcLitersEl.value || 50, 10);
-                calcLitersEl.value = snapToFiveLiters(current - 5);
-                updateCalculator();
-            });
+    // 2. Indikátor otevírací doby (Denně 7:00 - 19:00)
+    function updateOpenStatus() {
+      const badge = document.getElementById('open-status-badge');
+      const dot = document.getElementById('open-status-dot');
+      const text = document.getElementById('open-status-text');
+      if (!badge || !dot || !text) return;
 
-            calcPlus5Btn.addEventListener('click', () => {
-                const current = parseInt(calcLitersEl.value || 50, 10);
-                calcLitersEl.value = snapToFiveLiters(current + 5);
-                updateCalculator();
-            });
+      const now = new Date();
+      const hour = now.getHours();
+      const isOpen = hour >= 7 && hour < 19;
 
-            document.querySelectorAll('.preset-liters-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    calcLitersEl.value = snapToFiveLiters(parseInt(btn.getAttribute('data-liters'), 10));
-                    updateCalculator();
-                });
-            });
+      if (isOpen) {
+        badge.className = 'inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-400/30';
+        dot.className = 'w-2 h-2 rounded-full bg-emerald-400 animate-pulse';
+        text.textContent = 'Právě otevřeno (do 19:00)';
+      } else {
+        badge.className = 'inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-400/30';
+        dot.className = 'w-2 h-2 rounded-full bg-amber-400';
+        text.textContent = 'Zavřeno • Otevíráme v 7:00';
+      }
+    }
+    updateOpenStatus();
+    setInterval(updateOpenStatus, 60000);
 
-            // Mobilní menu
-            const mobileBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const iconOpen = document.getElementById('menu-icon-open');
-            const iconClose = document.getElementById('menu-icon-close');
+    // 3. Jednoduchá kalkulačka tankování po 5 litrech
+    const fuelButtons = document.querySelectorAll('.fuel-btn');
+    const fuelRange = document.getElementById('fuel-range');
+    const litersDisplay = document.getElementById('calc-liters-display');
+    const summaryFormula = document.getElementById('calc-summary-formula');
+    const totalPriceEl = document.getElementById('calc-total-price');
+    const btnMinus5 = document.getElementById('btn-minus-5');
+    const btnPlus5 = document.getElementById('btn-plus-5');
+    const presetBtns = document.querySelectorAll('.preset-btn');
 
-            mobileBtn.addEventListener('click', () => {
-                const isHidden = mobileMenu.classList.contains('hidden');
-                mobileMenu.classList.toggle('hidden', !isHidden);
-                iconOpen.classList.toggle('hidden', isHidden);
-                iconClose.classList.toggle('hidden', !isHidden);
-            });
+    let selectedPrice = 44.90;
+    let selectedName = 'DIESEL';
+    let currentLiters = 50;
 
-            document.querySelectorAll('.mobile-nav-link').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                    iconOpen.classList.remove('hidden');
-                    iconClose.classList.add('hidden');
-                });
-            });
+    function formatPriceCZ(num) {
+      return Math.round(num).toLocaleString('cs-CZ') + ' Kč';
+    }
 
-            // Stažení hotového souboru index.html
-            function downloadCurrentHtmlFile() {
-                const configScriptEl = document.getElementById('egar-config-script');
-                configScriptEl.textContent = '\n        window.EGAR_CONFIG = ' + JSON.stringify(cfg, null, 12) + ';\n    ';
+    function updateCalculator() {
+      litersDisplay.textContent = currentLiters + ' l';
+      fuelRange.value = currentLiters;
 
-                const fullHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
-                const blob = new Blob([fullHtml], { type: 'text/html;charset=utf-8' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'index.html';
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-            }
+      const priceFormatted = selectedPrice.toFixed(2).replace('.', ',');
+      summaryFormula.textContent = `${selectedName} • ${currentLiters} l × ${priceFormatted} Kč/l`;
 
-            document.getElementById('top-download-btn').addEventListener('click', downloadCurrentHtmlFile);
+      const total = currentLiters * selectedPrice;
+      totalPriceEl.textContent = formatPriceCZ(total);
 
-            // Modální okno pro správu cen
-            const adminModal = document.getElementById('admin-modal');
-            const openAdminBtn = document.getElementById('open-admin-btn');
-            const footerAdminBtn = document.getElementById('footer-admin-btn');
-            const closeAdminBtn = document.getElementById('close-admin-btn');
-            const adminForm = document.getElementById('admin-form');
-            const adminFuelsInputs = document.getElementById('admin-fuels-inputs');
-            const statusMsg = document.getElementById('admin-status-msg');
+      presetBtns.forEach(btn => {
+        const presetVal = parseInt(btn.getAttribute('data-preset'), 10);
+        if (presetVal === currentLiters) {
+          btn.className = 'preset-btn py-2 rounded-xl text-xs font-heading font-extrabold border-2 border-[#004aad] bg-blue-50 text-[#004aad] transition';
+        } else {
+          btn.className = 'preset-btn py-2 rounded-xl text-xs font-heading font-extrabold border border-slate-200 bg-white text-slate-700 hover:border-[#004aad] transition';
+        }
+      });
+    }
 
-            function openAdminModal() {
-                adminFuelsInputs.innerHTML = '';
-                cfg.fuels.forEach((f, idx) => {
-                    const div = document.createElement('div');
-                    div.innerHTML = `
-                        <label class="block text-xs font-bold text-slate-700 mb-1">${f.name}</label>
-                        <input type="text" data-fuel-idx="${idx}" value="${f.price}"
-                               class="fuel-price-inp w-full rounded-xl border border-slate-200 px-3 py-2 text-base font-display font-black text-egar-950">
-                    `;
-                    adminFuelsInputs.appendChild(div);
-                });
+    fuelButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        fuelButtons.forEach(b => {
+          b.className = 'fuel-btn rounded-2xl p-3 sm:p-4 border-2 border-slate-200 bg-slate-50 hover:bg-blue-50/50 text-slate-800 text-center transition';
+        });
+        btn.className = 'fuel-btn active-fuel rounded-2xl p-3 sm:p-4 border-2 border-[#004aad] bg-[#004aad] text-white text-center transition shadow-md';
 
-                document.getElementById('inp-font-theme').value = cfg.fontTheme || 'exo';
-                document.getElementById('inp-phone').value = cfg.contact.phone;
-                document.getElementById('inp-hours').value = cfg.contact.hoursText;
+        selectedPrice = parseFloat(btn.getAttribute('data-price'));
+        selectedName = btn.getAttribute('data-name');
+        updateCalculator();
+      });
+    });
 
-                statusMsg.classList.add('hidden');
-                adminModal.classList.remove('hidden');
-            }
+    fuelRange.addEventListener('input', (e) => {
+      currentLiters = parseInt(e.target.value, 10);
+      updateCalculator();
+    });
 
-            function closeAdminModal() {
-                adminModal.classList.add('hidden');
-            }
+    btnMinus5.addEventListener('click', () => {
+      if (currentLiters > 5) {
+        currentLiters -= 5;
+        updateCalculator();
+      }
+    });
 
-            function applyFormValuesToConfig() {
-                document.querySelectorAll('.fuel-price-inp').forEach(inp => {
-                    const idx = parseInt(inp.getAttribute('data-fuel-idx'), 10);
-                    const num = parsePriceCz(inp.value);
-                    if (num > 0) {
-                        cfg.fuels[idx].price = formatPriceCz(num);
-                    }
-                });
+    btnPlus5.addEventListener('click', () => {
+      if (currentLiters < 100) {
+        currentLiters += 5;
+        updateCalculator();
+      }
+    });
 
-                cfg.fontTheme = document.getElementById('inp-font-theme').value;
-                cfg.contact.phone = document.getElementById('inp-phone').value.trim();
-                cfg.contact.hoursText = document.getElementById('inp-hours').value.trim();
-                renderSite();
-            }
+    presetBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentLiters = parseInt(btn.getAttribute('data-preset'), 10);
+        updateCalculator();
+      });
+    });
 
-            openAdminBtn.addEventListener('click', openAdminModal);
-            footerAdminBtn.addEventListener('click', openAdminModal);
-            closeAdminBtn.addEventListener('click', closeAdminModal);
+    // Rok v patičce
+    const yearEl = document.getElementById('current-year');
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
 
-            adminForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-                applyFormValuesToConfig();
-                statusMsg.textContent = 'Ceny a údaje byly aktualizovány! Nyní můžete stáhnout hotový index.html.';
-                statusMsg.classList.remove('hidden');
-            });
-
-            document.getElementById('download-html-btn').addEventListener('click', function () {
-                applyFormValuesToConfig();
-                closeAdminModal();
-                downloadCurrentHtmlFile();
-            });
-
-            document.getElementById('footer-year').textContent = new Date().getFullYear();
-            renderSite();
-        })();
-    </script>
+    updateCalculator();
+  </script>
 </body>
 </html>
